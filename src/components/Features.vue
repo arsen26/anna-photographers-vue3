@@ -30,12 +30,13 @@
 
     <v-dialog max-width="500">
       <template v-slot:activator="{ props: activatorProps }">
-        <v-row>
+        <v-row class="justify-center">
           <v-btn
+            class="reserve-now-button-style"
             v-bind="activatorProps"
             x-large
             rounded
-            color="white button-text mx-auto mt-10 px-16"
+            color="white button-text mt-10 px-16"
           >
             <v-icon dark left> mdi-check-bold </v-icon>Rezervo tani setin tend
           </v-btn>
@@ -44,6 +45,17 @@
 
       <template v-slot:default="{ isActive }">
         <v-card>
+          <v-btn
+            icon
+            large
+            variant="plain"
+            @click="isActive.value = false"
+            class="close-btn"
+            style="position: absolute; top: 10px; right: 10px; z-index: 1"
+          >
+
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
           <v-card-title class="row-container-for-information-title-style">
             Kontakto per rezervim
           </v-card-title>
@@ -66,7 +78,13 @@
 
           <v-row class="row-container-for-information">
             <v-col>
-              <v-text-field hide-spin-buttons="true" type="number" v-model="numberValue" label="Nr Tel" variant="outlined"></v-text-field>
+              <v-text-field
+                hide-spin-buttons="true"
+                type="number"
+                v-model="numberValue"
+                label="Nr Tel"
+                variant="outlined"
+              ></v-text-field>
             </v-col>
             <v-col>
               <v-text-field
@@ -127,14 +145,9 @@ const moreMessage = ref(null)
 
 const sendMessageToWhatssApp = () => {
   console.log('respekte')
-  if (
-    !nameValue.value ||
-    !surnameValue.value ||
-    !numberValue.value ||
-    !packageValue.value
-  ) {
-    alert('Ju lutem plotësoni të gjitha fushat!');
-    return; 
+  if (!nameValue.value || !surnameValue.value || !numberValue.value || !packageValue.value) {
+    alert('Ju lutem plotësoni të gjitha fushat!')
+    return
   }
   console.log(
     `His/Her name is: ${nameValue.value},${numberValue.value},${packageValue.value},${surnameValue.value}`,
@@ -163,6 +176,13 @@ const sendMessageToWhatssApp = () => {
 }
 .reserve-button-style {
   padding-right: 19px;
+}
+@media (max-width: 900px) {
+  .reserve-now-button-style {
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .row-container-for-information {
   padding-left: 20px;

@@ -48,7 +48,7 @@ import { useTheme } from "vuetify";
 const social = ref( [
         {
           platform: 'Facebook',
-          link: 'https://www.facebook.com/',
+          link: 'https://www.facebook.com/annaphotographerss',
           icon: 'mdi-facebook',
         },
         // {
@@ -58,12 +58,12 @@ const social = ref( [
         // },
         {
           platform: 'Instagram',
-          link: 'https://www.instagram.com/',
+          link: 'https://www.instagram.com/annaphotographers/',
           icon: 'mdi-instagram',
         },
         {
           platform: 'Youtube',
-          link: 'https://www.linkedin.com/',
+          link: 'https://www.youtube.com/@annaphotographers',
           icon: 'mdi-youtube',
         },
         // {

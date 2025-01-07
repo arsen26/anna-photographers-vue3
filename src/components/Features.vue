@@ -43,7 +43,10 @@
       </template>
 
       <template v-slot:default="{ isActive }">
-        <v-card title="Kontakto per rezervim">
+        <v-card>
+          <v-card-title class="row-container-for-information-title-style">
+            Kontakto per rezervim
+          </v-card-title>
           <v-card-text>
             Plotesoni te dhenat e meposhtme per te kontaktuar me stafin e Anna Photographers.
           </v-card-text>
@@ -63,7 +66,7 @@
 
           <v-row class="row-container-for-information">
             <v-col>
-              <v-text-field v-model="numberValue" label="Nr Tel" variant="outlined"></v-text-field>
+              <v-text-field hide-spin-buttons="true" type="number" v-model="numberValue" label="Nr Tel" variant="outlined"></v-text-field>
             </v-col>
             <v-col>
               <v-text-field
@@ -77,12 +80,12 @@
             <v-textarea v-model="moreMessage" label="Me teper..." variant="outlined"></v-textarea>
           </v-row>
 
-          <v-card-actions>
+          <v-card-actions class="reserve-button-style">
             <v-spacer></v-spacer>
 
             <v-btn
               prepend-icon="mdi-check-circle"
-              variant="text"
+              variant="outlined"
               color="primary"
               @click="sendMessageToWhatssApp"
               >Rezervoni</v-btn
@@ -124,19 +127,43 @@ const moreMessage = ref(null)
 
 const sendMessageToWhatssApp = () => {
   console.log('respekte')
+  if (
+    !nameValue.value ||
+    !surnameValue.value ||
+    !numberValue.value ||
+    !packageValue.value
+  ) {
+    alert('Ju lutem plotësoni të gjitha fushat!');
+    return; 
+  }
   console.log(
     `His/Her name is: ${nameValue.value},${numberValue.value},${packageValue.value},${surnameValue.value}`,
   )
   const message = `Pershendetje! Une jam ${nameValue.value} ${surnameValue.value},dhe isha i/e interesuar per te bere setin me paketen
-  ${packageValue.value} Per te bere rezervimin ky eshte numri im i telefonit ${numberValue.value}. SHENIM: ${moreMessage.value}`
+  ${packageValue.value} Per te bere rezervimin ky eshte numri im i telefonit ${numberValue.value}. SHENIM: ${moreMessage.value}™`
   const phoneNumber = '+355697496384'
-
-  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
-  window.open(url, '_blank')
+  if (
+    (numberValue.value.includes('+') && numberValue.value.length > 12) ||
+    (!numberValue.value.includes('+') && numberValue.value.length > 10)
+  ) {
+    alert('Numri që keni vendosur nuk është i saktë')
+  } else {
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+    window.open(url, '_blank')
+  }
 }
 </script>
 
 <style scoped>
+.row-container-for-information-title-style {
+  padding-left: 23px;
+  margin-bottom: -10px;
+  font-weight: 600;
+  font-size: large;
+}
+.reserve-button-style {
+  padding-right: 19px;
+}
 .row-container-for-information {
   padding-left: 20px;
   padding-right: 20px;

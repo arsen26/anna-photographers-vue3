@@ -1,31 +1,31 @@
 <template>
   <v-app>
-    <siteHeader />
     <v-main>
+      <siteHeader />
+
       <hero />
-      <intro/>
-    <CalloutBlock/>
-    <Features/>
-    <Brands/>
-    <footerTop/>
-    <siteFooter />
+      <intro />
+      <CalloutBlock />
+      <Features />
+      <Brands />
+      <footerTop />
+      <siteFooter />
     </v-main>
+
     <!-- <hero /> -->
     <!-- <router-view /> -->
-   
-
-</v-app>
+  </v-app>
 </template>
 
 <script>
-import siteHeader from './components/siteHeader.vue';
-import siteFooter from './components/siteFooter.vue';
-import hero from '@/components/Hero.vue';
-import intro from '@/components/Intro.vue';
-import CalloutBlock from './components/CalloutBlock.vue';
-import Features from './components/Features.vue';
-import Brands from './components/Brands.vue';
-import footerTop from './components/footerTop.vue';
+import siteHeader from './components/siteHeader.vue'
+import siteFooter from './components/siteFooter.vue'
+import hero from '@/components/Hero.vue'
+import intro from '@/components/Intro.vue'
+import CalloutBlock from './components/CalloutBlock.vue'
+import Features from './components/Features.vue'
+import Brands from './components/Brands.vue'
+import footerTop from './components/footerTop.vue'
 
 export default {
   components: {
@@ -36,7 +36,7 @@ export default {
     CalloutBlock,
     Features,
     Brands,
-    footerTop
-  }
-};
+    footerTop,
+  },
+}
 </script>

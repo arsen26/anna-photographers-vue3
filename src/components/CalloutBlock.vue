@@ -1,11 +1,7 @@
 <template>
   <section
-    :class="
-      $vuetify.theme.dark
-        ? 'grey darken-4 primary--text text--lighten-1'
-        : 'grey lighten-4 primary--text'
-    "
-    class="primary--text py-16"
+    :class="computedClass"
+    class="primary--text py-16 section-style"
   >
     <v-container>
       <v-row>
@@ -29,7 +25,7 @@
                   class="d-flex"
                   icon
                   large
-                  color="#f78c6b"
+                  :color="'#f78c6b'"
                   :href="socialm.link"
                   target="_blank"
                 >
@@ -44,11 +40,12 @@
   </section>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      social: [
+
+<script setup>
+import { computed,ref } from "vue";
+import { useTheme } from "vuetify";
+
+const social = ref( [
         {
           platform: 'Facebook',
           link: 'https://www.facebook.com/',
@@ -74,13 +71,21 @@ export default {
         //   link: 'https://modevue.staticdesigner.com/',
         //   icon: 'mdi-github',
         // },
-      ],
-    }
-  },
-}
+      ],)
+      const theme = useTheme();
+      const computedClass = computed(() =>
+      theme.global.current.value.dark
+        ? "grey darken-4 primary--text text--lighten-1"
+        : "grey lighten-4 primary--text"
+    );
+
 </script>
 
 <style scoped>
+.section-style {
+  background-color: rgba(128, 128, 128, 0.1); /* Grey me 50% transparencë */
+}
+
 .follow-us-on-social-title {
   font-size: 45px;
   color: #f78c6b;

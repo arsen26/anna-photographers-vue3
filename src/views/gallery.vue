@@ -39,30 +39,12 @@
   </section>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      heroAlt: [
-        {
+<script setup>
+import { ref } from 'vue';
+const heroAlt = ref([ {
           src: 'pexels-andrea-piacquadio-3830745.jpg',
           heading: 'Galeria e fotove',
-        },
-      ],
-    }
-  },
-  head() {
-    return {
-      title: 'Gallery',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content:
-            'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm shift client partner network product seilans solve management influencer analytics leverage virality. incubator seed round massmarket. buyer agile development growth hacking business-to-consumer ecosystem',
-        },
-      ],
-    }
-  },
-}
+        }])
+
+
 </script>

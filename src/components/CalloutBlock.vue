@@ -83,7 +83,7 @@ const social = ref( [
 
 <style scoped>
 .section-style {
-  background-color: rgba(128, 128, 128, 0.1); /* Grey me 50% transparencë */
+  background-color: rgba(128, 128, 128, 0.1); 
 }
 
 .follow-us-on-social-title {

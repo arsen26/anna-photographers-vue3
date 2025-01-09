@@ -1,7 +1,7 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
+  width: 100%; /* Zë gjithmonë 100% të gjerësisë */
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
@@ -28,8 +28,9 @@ a,
   }
 
   #app {
-    
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+    display: flex; 
+    grid-template-columns: 0fr 0fr;
+    gap: 0rem;
+    padding: 0 0rem;
   }
 }

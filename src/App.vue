@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-main>
+    <v-container fluid>
       <siteHeader />
 
       <hero />
@@ -10,7 +10,7 @@
       <Brands />
       <footerTop />
       <siteFooter />
-    </v-main>
+    </v-container>
 
     <!-- <hero /> -->
     <!-- <router-view /> -->

@@ -1,7 +1,7 @@
 <template>
   <section id="hero" class="carousel-section">
     <v-carousel
-      height="calc(70vh - 64px)"      
+      height="calc(70vh - 64px)"
       theme="dark"
       cycle
       show-arrows-on-hover
@@ -14,7 +14,7 @@
         :src="carousel.src"
         class="gradient-fill"
       >
-        <v-container>
+        <v-container fluid>
           <img v-lazy="carousel.src" style="" />
 
           <div class="carousel-image" style="max-width: 600px">
@@ -98,7 +98,7 @@ export default {
   margin-top: 65px;
 }
 .gradient-fill  {
-  
+
   background: rgb(0, 0, 0);
   background: linear-gradient(
     to right,

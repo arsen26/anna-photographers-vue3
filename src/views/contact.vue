@@ -110,7 +110,7 @@
 </template>
 
 <script>
-import contactForm from '~/components/sections/contactForm.vue'
+import contactForm from '@/components/contactForm.vue'
 export default {
   components: {
     contactForm,

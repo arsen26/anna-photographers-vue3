@@ -103,7 +103,7 @@ const items = ref([
   {
     icon: 'mdi-contacts',
     title: 'Contact',
-    to: '/contact',
+    to: '/Contact',
   },
 ])
 

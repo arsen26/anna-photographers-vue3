@@ -11,7 +11,7 @@
 import { onMounted } from 'vue';
 import { useRouter } from 'vue-router'; // Importoni useRouter për të përdorur ruterin
 import whatssAppContact from './components/whatssAppContact.vue';
-
+import siteHeader from './components/siteHeader.vue';
 const router = useRouter(); // Krijoni instancën e routerit
 
 onMounted(() => {

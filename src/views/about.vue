@@ -85,6 +85,10 @@ import AboutUsHero from '@/components/AboutUsHero.vue';
 import Team from '@/components/Team.vue'
 import Timeline from '@/components/Timeline.vue'
 import teamWork from '@/assets/teamwork.jpg'
+import Flajdon from '@/assets/flajdon.jpg'
+import Xheke from '@/assets/xhekja.jpg'
+import Vovi from '@/assets/vovi.webp'
+import WorkingPerson from '@/assets/workingPerson.jpg'
 const heroAlt = ref([
   {
     src:teamWork,
@@ -97,28 +101,29 @@ const ourTeam = ref([
     position: 'Photo Editor / Decor implementer',
     phone: '+1 (987) 1625346',
     email: 'flajdon@gmail.com',
-    photo: 'person-1.jpg',
+    photo: Flajdon,
   },
   {
     name: 'Anxhela Shkurta Cenollari',
     position: 'Photograper / Decor planner / Photo-video editor',
     phone: '+1 (987) 5894684',
     email: 'anxhir.as@gmail.com',
-    photo: 'person-2.jpg',
+    photo: Xheke,
   },
   {
     name: 'Rovina Shkurta Canollari',
     position: 'Photographer / Decor planner / PR',
     phone: '+1 (987) 6982456',
     email: 'rovinacanollari@gmail.com',
-    photo: 'person-3.jpg',
+    photo: Vovi,
   },
 ])
+console.log(ourTeam.value,'=>> our team')
 const ourVision = ref([
   {
     title: 'Our Vision',
     subtitle: 'Our Vision Subtitle',
-    photo: 'pexels-canva-studio-3277806.jpg',
+    photo: WorkingPerson,
     description:
       ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium. Doloremque laudantium, totam rem aperiam. ',
   },

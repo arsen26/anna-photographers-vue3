@@ -20,9 +20,9 @@
         </v-row>
       </v-img>
     </v-row>
-    <v-row>
+    <!-- <v-row>
       <span> test </span>
-    </v-row>
+    </v-row> -->
   </section>
 </template>
 

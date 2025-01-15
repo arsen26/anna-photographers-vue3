@@ -2,7 +2,7 @@
   <section>
     <v-row no-gutters>
       <v-col cols="12">
-        <SectionsHeroAlt :hero-alt="heroAlt" />
+        <HeroAlt :hero-alt="heroAlt" />
         <v-container>
           <v-row class="py-16">
             <v-col md="5" cols="12">
@@ -14,9 +14,9 @@
                   </v-list-item-icon>
 
                   <v-list-item-content>
-                    <v-list-item-title>ADDRESS</v-list-item-title>
+                    <v-list-item-title>ADRESA</v-list-item-title>
                     <v-list-item-subtitle
-                      >1400 Main Street, Orlando, FL 79938</v-list-item-subtitle
+                      >Misto Mame, Rruga Thoma Koxhaj, Kashar 1001</v-list-item-subtitle
                     >
                   </v-list-item-content>
                 </v-list-item>
@@ -29,10 +29,10 @@
                   <v-list-item-content>
                     <v-list-item-title>EMAIL</v-list-item-title>
                     <v-list-item-subtitle
-                      >info@example.com</v-list-item-subtitle
+                      >anxhir@gmail.com</v-list-item-subtitle
                     >
                     <v-list-item-subtitle
-                      >support@example.com</v-list-item-subtitle
+                      >annaphotographers@yahoo.com</v-list-item-subtitle
                     >
                   </v-list-item-content>
                 </v-list-item>
@@ -44,8 +44,8 @@
 
                   <v-list-item-content>
                     <v-list-item-title>PHONE</v-list-item-title>
-                    <v-list-item-subtitle>(323) 555-6789</v-list-item-subtitle>
-                    <v-list-item-subtitle>(650) 555-1234</v-list-item-subtitle>
+                    <v-list-item-subtitle>+355 69 749 6384</v-list-item-subtitle>
+                    <!-- <v-list-item-subtitle>(650) 555-1234</v-list-item-subtitle> -->
                   </v-list-item-content>
                 </v-list-item>
               </v-list>
@@ -59,11 +59,11 @@
                   </v-list-item-icon>
                   <v-list-item-content>
                     <v-list-item-title>MONDAY to FRIDAY </v-list-item-title>
-                    <v-list-item-subtitle>9am to 5pm</v-list-item-subtitle>
+                    <v-list-item-subtitle>9am to 7pm</v-list-item-subtitle>
                   </v-list-item-content>
                 </v-list-item>
 
-                <v-list-item>
+                <!-- <v-list-item>
                   <v-list-item-icon>
                     <v-icon color="primary"> mdi-clock </v-icon>
                   </v-list-item-icon>
@@ -81,21 +81,18 @@
                     <v-list-item-title>SUNDAY</v-list-item-title>
                     <v-list-item-subtitle>cLOSED</v-list-item-subtitle>
                   </v-list-item-content>
-                </v-list-item>
+                </v-list-item> -->
               </v-list>
             </v-col>
             <v-col md="7" cols="12">
-              <div class="text-h4 font-weight-black mb-8">Contact Us</div>
-              <p class="mb-10">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <contactForm />
+              <div class="text-h4 font-weight-black mb-8">Dergoni Email</div>
+
+              <footerContactForm />
             </v-col>
           </v-row>
         </v-container>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.285388316138!2d-81.37969424867693!3d28.531140482371708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e77b041135b063%3A0x13aab64f9cc768fc!2s1400%20Main%20Ln%2C%20Orlando%2C%20FL%2032801%2C%20USA!5e0!3m2!1sen!2sin!4v1606230494596!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d749.1242974401672!2d19.772467459522165!3d41.31980078245276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135031a222e48ff1%3A0x1d747a32a885ed0f!2sAnna%20Photographer!5e0!3m2!1sen!2s!4v1736976096277!5m2!1sen!2s"
           width="100%"
           height="600"
           frameborder="0"
@@ -109,23 +106,20 @@
   </section>
 </template>
 
-<script>
-import contactForm from '@/components/contactForm.vue'
-export default {
-  components: {
-    contactForm,
-  },
-  data() {
-    return {
-      heroAlt: [
+<script setup>
+import footerContactForm from '@/components/footerContactForm.vue'
+import HeroAlt from '@/components/AboutUsHero.vue';
+import { ref } from 'vue';
+import ContactImg from '@/assets/contact.jpg'
+const heroAlt= ref([
         {
-          src: 'pexels-andrea-piacquadio-3830745.jpg',
+          src: ContactImg,
           heading: ' Contact Us ',
         },
-      ],
-    }
-  },
-  head() {
+      ])
+
+
+ const head = () => {
     return {
       title: 'Contact Us',
       meta: [
@@ -137,8 +131,8 @@ export default {
         },
       ],
     }
-  },
-}
+  }
+
 </script>
 
 <style scoped>

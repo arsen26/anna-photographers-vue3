@@ -9,7 +9,7 @@
         <h2 class="text-h4 text-md-h3 text-center font-weight-black mb-7">
           3 Arsye pse duhet te beni sa me shum fotografi
         </h2>
-        <p class="title font-weight-light">
+        <p class="title font-weight-thin">
           Bërja e sa më shumë fotografi sjell një përvojë të pasur dhe
           emocionale. Përmes linzave të aparatit, hapesh ndaj një bote të re,
           grumbullon kujtime të paharrueshme, dhe shpreh shpirtin dhe njohuritë

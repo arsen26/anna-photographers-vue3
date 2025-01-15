@@ -27,7 +27,7 @@
             shaped
           >
             <v-avatar size="240"
-              ><img :src="`/team/${item.photo}`" :lazy-src="`team/${item.photo}`" alt="John"
+              ><img class="avatar-image-style" :src="`${item.photo}`" :lazy-src="`${item.photo}`" alt="Stafi"
             /></v-avatar>
             <div class="text-h5 text-uppercase font-weight-black mt-6 mb-2">
               {{ item.name }}
@@ -64,5 +64,8 @@ const sendToEmail = (person) => {
 <style scoped>
 .email-at-teammember {
   cursor: pointer;
+}
+.avatar-image-style{
+    object-fit:contain !important;
 }
 </style>

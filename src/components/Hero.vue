@@ -21,12 +21,12 @@
               {{ carousel.heading.toUpperCase() }}
             </div>
             <p class="mb-5 white--text">{{ carousel.subHeading }}</p>
-            <v-btn style="background-color: #ef476f; color: white" class="my-3">
+            <v-btn @click="sendToPhoneNumber" style="background-color: #ef476f; color: white" class="my-3">
               <v-icon left large color="white">mdi-phone</v-icon>
               Rezervoni tani
             </v-btn>
             <span class="mx-2 my-4"></span>
-            <v-btn text class="my-3" outlined dark>
+            <v-btn @click="sendToInstagram" text class="my-3" variant="outlined">
               <v-icon left large color="#ef476f">mdi-instagram</v-icon>
               Instagram
             </v-btn>
@@ -67,6 +67,14 @@ const carouselsData = ref([
       'Studio Fotografike Anna Photographers është burimi juaj i besueshëm për një editim të fotos së jashtëzakonshëm. Me pasion dhe kujdes të veçantë, synojmë të përmirësojmë çdo detaj. Qëllimi ynë i vetëm është të sjellim kujtimet tuaja në nivele të reja të shkëlqimit përmes aftësisë sonë të pasur në editim fotografik.',
   },
 ])
+const sendToPhoneNumber = () => {
+  window.location.href = 'tel:+355696754600';
+}
+
+const sendToInstagram = () => {
+  window.open('https://www.instagram.com/annaphotographers', '_blank');
+}
+
 </script>
 
 <style scoped>

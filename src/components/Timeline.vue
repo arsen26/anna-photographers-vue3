@@ -3,15 +3,15 @@
     <v-container>
       <h2 class="text-h3 text-center font-weight-black mb-8">Rrugetimi yne</h2>
         <v-timeline>
-          <v-timeline-item v-for="(year, i) in years" :color="year.color" small>
+          <v-timeline-item v-for="(year, i) in years"  :dot-color="year.color" small>
             <template v-slot:opposite>
               <span
-                :class="`headline font-weight-bold ${year.color}--text`"
+                :class="`headline font-weight-bold text-${year.color}`"
                 v-text="year.year"
               ></span>
             </template>
             <div class="py-4">
-              <h2 :class="`headline font-weight-light mb-4 ${year.color}--text`">
+              <h2 :class="`headline font-weight-light mb-4 text-${year.color}`">
                 {{ year.title }}
               </h2>
               <div></div>
@@ -25,6 +25,7 @@
 
 <script setup>
 import { ref, defineProps } from 'vue'
+
 const years = ref([
   {
     title: 'Themelimi',

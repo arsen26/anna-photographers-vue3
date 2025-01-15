@@ -20,6 +20,13 @@ export const vuetify = createVuetify({
   },
     theme: {
     defaultTheme: 'light',
+    colors: {
+      cyan: '#00BCD4',
+      green: '#4CAF50',
+      pink: '#E91E63',
+      amber: '#FFC107',
+      orange: '#FF9800',
+    },
   },
 });
 

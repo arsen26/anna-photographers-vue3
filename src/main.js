@@ -1,4 +1,4 @@
-import './assets/main.css';
+// import './assets/main.css';
 import { createVuetify } from 'vuetify';
 import 'vuetify/styles'; // Vuetify styles
 import * as components from 'vuetify/components';

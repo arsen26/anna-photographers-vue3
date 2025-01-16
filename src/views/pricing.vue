@@ -2,29 +2,30 @@
   <section>
     <v-row no-gutters>
       <v-col cols="12">
-        <SectionsHeroAlt :hero-alt="heroAlt" />
-        <SectionsPricing />
-        <SectionsBrands />
-        <SectionsTestimonials />
+        <AboutUsHero :hero-alt="heroAlt" />
+        <Pricing />
+        <Brands />
+        <Testimonials />
       </v-col>
     </v-row>
   </section>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      heroAlt: [
-        {
-          src: 'pexels-andrea-piacquadio-3884440.jpg',
+<script setup>
+import { ref } from 'vue';
+import AboutUsHero from '@/components/AboutUsHero.vue';
+import Pricing from '@/components/Pricing.vue';
+import Brands from '@/components/Brands.vue';
+import Testimonials from '@/components/Testimonials.vue';
+import price from '@/assets/price.jpg'
+const heroAlt = ref([{
+
+          src: price,
           heading: ' Pricing ',
-        },
-      ],
-    }
-  },
-  head() {
-    return {
+
+}])
+const head = () =>{
+  return {
       title: 'Pricing and Plans',
       meta: [
         {
@@ -35,6 +36,6 @@ export default {
         },
       ],
     }
-  },
 }
+
 </script>

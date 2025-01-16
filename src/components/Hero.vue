@@ -85,7 +85,7 @@ const sendToInstagram = () => {
   top: 30%;
 }
 .carousel-section {
-  margin-top: 65px;
+  margin-top: 5px;
 }
 .gradient-fill {
   background: rgb(0, 0, 0);

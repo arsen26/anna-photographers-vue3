@@ -2,7 +2,7 @@
   <section id="home">
     <v-row>
       <v-col>
-        <siteHeader />
+        <!-- <siteHeader /> -->
         <hero />
         <intro />
         <CalloutBlock />

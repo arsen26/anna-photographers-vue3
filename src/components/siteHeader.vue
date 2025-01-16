@@ -26,7 +26,7 @@
     </v-navigation-drawer>
 
     <!-- MOBILE VIEW -->
-    <v-app-bar fixed app hide-on-scroll height="74" elevate-on-scroll>
+    <v-app-bar :absolute="true" scroll-behavior="hide" height="74" elevate-on-scroll>
       <v-app-bar-nav-icon class="hidden-md-and-up" @click="drawer = true" />
       <v-img class="logo-style-menu" :src="image" />
       <v-spacer />

@@ -13,8 +13,14 @@
         v-for="(carousel, carindex) in carouselsData"
         :key="carindex"
         :src="carousel.src"
+        cover
         class="gradient-fill"
+        width="100%"
       >
+      <div
+    class="carousel-background"
+    :style="{ backgroundImage: `url(${carousel.src})` }"
+  ></div>
         <v-container fluid>
           <div class="carousel-image" style="max-width: 600px; z-index: 2">
             <div class="text-h2 mb-3 text-sm-h3 text-h5 font-weight-black white--text">
@@ -78,17 +84,33 @@ const sendToInstagram = () => {
 </script>
 
 <style scoped>
+/* .carousel-background {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+} */
+
+
 .carousel-image {
   color: white;
   position: absolute;
   left: 20%;
   top: 30%;
+  z-index: 2;
 }
+
 .carousel-section {
   margin-top: 5px;
 }
 .gradient-fill {
-  background: rgb(0, 0, 0);
   background: linear-gradient(to right, rgba(3, 12, 41, 0.75), rgba(5, 11, 31, 0.65));
+  position: relative;
+  overflow: hidden;
 }
 </style>

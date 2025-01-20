@@ -10,8 +10,8 @@
               </h2>
 
               <p class="my-10 title">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                Më poshtë do të gjeni tabelën e plotë të çmimeve për setet fotografike, si dhe
+                tabelën e çmimeve për dekorimet e eventeve.
               </p>
               <div class="text-center">
                 <v-btn-toggle
@@ -22,7 +22,7 @@
                   light
                   color="white"
                 >
-                  <v-btn value="monthly"> Set fotografik </v-btn>
+                  <v-btn value="priceAll"> Set fotografik </v-btn>
                   <v-btn value="yearly"> Dekor Eventi </v-btn>
                 </v-btn-toggle>
               </div>
@@ -32,58 +32,39 @@
       </v-row>
     </v-container>
     <v-container fluid>
-      <v-row class="mx-auto row-container" style="max-width: 1400px">
+      <v-row class="mx-auto row-container" style="max-width: 1920px">
         <v-col v-for="(plan, ix) in plans" :key="`plan-${ix}`" cols="12" md="2">
-          <v-hover v-slot="{ hover }">
-            <v-card
-              :elevation="hover ? 24 : plan.elevation"
-              :color="plan.color"
-              max-width="400"
-              :class="hover ? 'zoom' : 'notzoom'"
-              class="mx-auto transition-swing"
-            >
-              <h3
-                class="text-h4 text-center font-weight-black white--text pt-5"
-                v-text="plan.plan"
-              ></h3>
-              <v-card-text
-                class="text-center subtitle-1 white--text py-2"
-                v-text="plan.description"
-              ></v-card-text>
-              <h5 class="text-h5 font-weight-black text-center text-white pt-0">
-                {{ plan.monthly }}
-                <!-- <span class="subtitle-1"
-                  >per {{ planDuration === 'monthly' ? 'month' : 'year' }}</span
-                > -->
-              </h5>
-              <br>
-              <v-row>
-                  <v-list style="max-width: max-content;">
+          <v-card :color="plan.color" max-width="400" class="mx-auto card-style">
+            <h3
+              class="text-h4 text-center font-weight-black white--text pt-5"
+              v-text="plan.plan"
+            ></h3>
+            <!-- <v-card-text
+              class="text-center subtitle-1 white--text py-2"
+              v-text="plan.description"
+            ></v-card-text> -->
+            <h5 class="text-h5 font-weight-black text-center text-white pt-0">
+              {{ plan.priceAll }}
+            </h5>
+            <br />
+            <v-row class="row-detail-container">
+              <v-list>
                 <v-list-item v-for="(feature, ik) in plan.features" :key="`feature-${ik}`" dense>
-                  <!-- <v-list-item-icon>
-                    <v-icon>
-                      {{ feature.icon }}
-                    </v-icon>
-                  </v-list-item-icon> -->
                   <template v-slot:prepend>
                     <v-icon class="icon-style" :icon="feature.icon"></v-icon>
                   </template>
                   <v-list-item-content>
-                    <v-list-item-title
-                      class="text-list-style"
-                      v-text="feature.text"
-                    > </v-list-item-title>
+                    <v-list-item-title class="text-list-style" v-text="feature.text">
+                    </v-list-item-title>
                   </v-list-item-content>
                   <v-divider></v-divider>
                 </v-list-item>
-                <v-list-item>
-                  <v-btn color="primary" large block rounded class="mx-auto my-3"> Rezervo </v-btn>
-                </v-list-item>
               </v-list>
-              </v-row>
-
-            </v-card></v-hover
-          >
+            </v-row>
+            <v-row class="justify-center">
+              <v-btn color="primary" rounded class="reservation-button"> Rezervo </v-btn>
+            </v-row>
+          </v-card>
         </v-col>
       </v-row>
     </v-container>
@@ -94,14 +75,14 @@
 export default {
   data() {
     return {
-      planDuration: 'monthly',
+      planDuration: 'priceAll',
       plans: [
         {
           plan: 'Small',
           elevation: 0,
           color: 'primary darken-1',
           description: 'Rekomandohet per cifte',
-          monthly: '9.000 ALL',
+          priceAll: '9.000 ALL',
           yearly: '$100',
           features: [
             {
@@ -116,19 +97,6 @@ export default {
               icon: 'mdi-arrange-bring-to-front',
               text: '2 Skenografi',
             },
-            // {
-            //   icon: 'mdi-image-filter-frames',
-            //   text: '10 email addreses',
-            // },
-            // {
-            //   icon: 'mdi-image-filter-frames',
-            //   text: 'free domain with annual plan',
-            // },
-            // {
-            //   icon: 'mdi-video-account',
-            //   text: '4X pricessing power',
-            // },
-
           ],
         },
         {
@@ -136,7 +104,7 @@ export default {
           elevation: 0,
           color: 'green darken-2',
           description: 'Rekomandohet per familje',
-          monthly: '12.000 ALL',
+          priceAll: '12.000 ALL',
           yearly: '$400',
           features: [
             {
@@ -151,19 +119,6 @@ export default {
               icon: 'mdi-arrange-bring-to-front',
               text: '3 Skenografi',
             },
-            // {
-            //   icon: 'mdi-image-filter-frames',
-            //   text: '10 email addreses',
-            // },
-            // {
-            //   icon: 'mdi-image-filter-frames',
-            //   text: 'free domain with annual plan',
-            // },
-            // {
-            //   icon: 'mdi-video-account',
-            //   text: '4X pricessing power',
-            // },
-
           ],
         },
         {
@@ -171,7 +126,7 @@ export default {
           elevation: 0,
           color: 'orange darken-3',
           description: 'Rekomandohet per familje',
-          monthly: '15.000 ALL',
+          priceAll: '15.000 ALL',
           yearly: '$1000',
           features: [
             {
@@ -190,15 +145,6 @@ export default {
               icon: 'mdi-image-filter-frames',
               text: '10 Foto te printuara (10x15)',
             },
-            // {
-            //   icon: 'mdi-image-filter-frames',
-            //   text: 'free domain with annual plan',
-            // },
-            // {
-            //   icon: 'mdi-video-account',
-            //   text: '4X pricessing power',
-            // },
-
           ],
         },
         {
@@ -206,7 +152,7 @@ export default {
           elevation: 0,
           color: 'orange darken-3',
           description: 'Rekomandohet per detaje',
-          monthly: '20.000 ALL',
+          priceAll: '20.000 ALL',
           yearly: '$1000',
           features: [
             {
@@ -229,11 +175,6 @@ export default {
               icon: 'mdi-image-filter-frames',
               text: '10 foto te printuara (10x15)',
             },
-            // {
-            //   icon: 'mdi-video-account',
-            //   text: '4X pricessing power',
-            // },
-
           ],
         },
         {
@@ -241,7 +182,7 @@ export default {
           elevation: 0,
           color: 'orange darken-3',
           description: 'Rekomandohet per detaje',
-          monthly: '30.000 ALL',
+          priceAll: '30.000 ALL',
           yearly: '$1000',
           features: [
             {
@@ -256,19 +197,14 @@ export default {
               icon: 'mdi-arrange-bring-to-front',
               text: 'Skenografi pa limit',
             },
-            // {
-            //   icon: 'mdi-image-filter-frames',
-            //   text: 'unlimited addreses',
-            // },
             {
               icon: 'mdi-image-filter-frames',
               text: '30 Foto te lara(10x15)',
             },
             {
               icon: 'mdi-video-account',
-              text: 'Video profesionale',
-            }
-
+              text: 'Video profesionale 4k',
+            },
           ],
         },
       ],
@@ -278,9 +214,39 @@ export default {
 </script>
 
 <style scoped>
+@media (min-width: 1310px) and (max-width: 1410px) {
+  .card-style {
+    max-height: 600px;
+    justify-content: center !important;
+  }
+}
+@media (max-width: 1310px) {
+  .card-style {
+    min-height: 550px;
+    justify-content: center !important;
+  }
+  .row-detail-container {
+  background-color: white;
+  min-height: 450px !important;
+}
+}
+
+.reservation-button {
+  margin-top: -70px !important;
+  min-width: 80% !important;
+}
+.card-style {
+  max-height: 500px;
+  justify-content: center !important;
+}
+.row-detail-container {
+  background-color: white;
+  min-height: 360px;
+}
 .row-container {
   width: 100% !important;
   display: flex;
+  min-width: 320px !important;
   justify-content: center;
 }
 .icon-style {
@@ -289,12 +255,9 @@ export default {
 }
 
 .text-list-style {
-  /* font-size: 13px; */
   padding-top: 0px;
   white-space: normal;
   overflow-wrap: break-word;
-  word-wrap: break-word; /* Mbështetje për shfletues më të vjetër */
+  word-wrap: break-word;
 }
-
-
 </style>

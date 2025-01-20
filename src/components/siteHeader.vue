@@ -42,7 +42,7 @@ const items = ref([
   { icon: 'mdi-home-outline', title: 'Home', to: '/' },
   { icon: 'mdi-information-outline', title: 'Rreth nesh', to: '/About' },
   { icon: 'mdi-view-gallery-outline', title: 'Photography Gallery', to: '/gallery' },
-  { icon: 'mdi-finance', title: 'Anna dekor', to: '/pricing' },
+  { icon: 'mdi-finance', title: 'Cmimet', to: '/pricing' },
   { icon: ' mdi-view-gallery', title: 'Decor Gallery', to: '/gallery' },
   { icon: 'mdi-contacts', title: 'Contact', to: '/Contact' },
 ])

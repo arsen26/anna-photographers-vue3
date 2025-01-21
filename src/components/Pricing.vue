@@ -9,9 +9,15 @@
                 Tabela e ofertave
               </h2>
 
-              <p class="my-10 title">
+              <h4 class="my-10 title">
                 Më poshtë do të gjeni tabelën e plotë të çmimeve për setet fotografike, si dhe
                 tabelën e çmimeve për dekorimet e eventeve.
+              </h4>
+              <p v-if="showExplenation" style="width: 65%" class="my-5 mx-auto title">
+                Në të gjitha skenografitë përfshihen veshje për vajza 0-6 vjeçe, veshje për djem 0-3
+                vjeç, si dhe veshje për shtatzëna dhe familjarët për skenat festive. Në skenografi
+                marrin pjesë fëmijët dhe prindërit, ndërsa për familjarët e tjerë ka një pagesë
+                shtesë prej 1000 ALL, duke përfshirë edhe një foto të edituar në Photoshop.
               </p>
               <div class="text-center">
                 <v-btn-toggle
@@ -20,10 +26,11 @@
                   borderless
                   mandatory
                   light
+                  @update:model-value="changePackage(planDuration)"
                   color="white"
                 >
-                  <v-btn value="priceAll"> Set fotografik </v-btn>
-                  <v-btn value="yearly"> Dekor Eventi </v-btn>
+                  <v-btn value="photography"> Set fotografik </v-btn>
+                  <v-btn value="event"> Dekor Eventi </v-btn>
                 </v-btn-toggle>
               </div>
             </v-col>
@@ -33,10 +40,15 @@
     </v-container>
     <v-container fluid>
       <v-row class="mx-auto row-container" style="max-width: 1920px">
-        <v-col v-for="(plan, ix) in plans" :key="`plan-${ix}`" cols="12" md="2">
-          <v-card :color="plan.color" max-width="400" class="mx-auto card-style">
+        <v-col
+          v-for="(plan, ix) in planDuration === 'photography' ? plans : event"
+          :key="`plan-${ix}`"
+          cols="12"
+          md="2"
+        >
+          <v-card :color="plan.color" max-width="400" class="mx-auto" :class="cardClass">
             <h3
-              class="text-h4 text-center font-weight-black white--text pt-5"
+              class="text-h4 text-center font-weight-black text-white pt-5"
               v-text="plan.plan"
             ></h3>
             <!-- <v-card-text
@@ -47,7 +59,7 @@
               {{ plan.priceAll }}
             </h5>
             <br />
-            <v-row class="row-detail-container">
+            <v-row :class="rowDetailContainer">
               <v-list>
                 <v-list-item v-for="(feature, ik) in plan.features" :key="`feature-${ik}`" dense>
                   <template v-slot:prepend>
@@ -71,177 +83,350 @@
   </section>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      planDuration: 'priceAll',
-      plans: [
-        {
-          plan: 'Small',
-          elevation: 0,
-          color: 'primary darken-1',
-          description: 'Rekomandohet per cifte',
-          priceAll: '9.000 ALL',
-          yearly: '$100',
-          features: [
-            {
-              icon: ' mdi-image',
-              text: '100 Foto (shkrepje)',
-            },
-            {
-              icon: 'mdi-image-edit',
-              text: '8 Foto te edituara',
-            },
-            {
-              icon: 'mdi-arrange-bring-to-front',
-              text: '2 Skenografi',
-            },
-          ],
-        },
-        {
-          plan: 'Medium',
-          elevation: 0,
-          color: 'green darken-2',
-          description: 'Rekomandohet per familje',
-          priceAll: '12.000 ALL',
-          yearly: '$400',
-          features: [
-            {
-              icon: ' mdi-image',
-              text: '150 foto (shkrepje)',
-            },
-            {
-              icon: 'mdi-image-edit',
-              text: '12 Foto te edituara',
-            },
-            {
-              icon: 'mdi-arrange-bring-to-front',
-              text: '3 Skenografi',
-            },
-          ],
-        },
-        {
-          plan: 'Large',
-          elevation: 0,
-          color: 'orange darken-3',
-          description: 'Rekomandohet per familje',
-          priceAll: '15.000 ALL',
-          yearly: '$1000',
-          features: [
-            {
-              icon: ' mdi-image',
-              text: '250 foto (shkrepje)',
-            },
-            {
-              icon: 'mdi-image-edit',
-              text: '15 Foto te edituara',
-            },
-            {
-              icon: 'mdi-arrange-bring-to-front',
-              text: '4 Skenografi',
-            },
-            {
-              icon: 'mdi-image-filter-frames',
-              text: '10 Foto te printuara (10x15)',
-            },
-          ],
-        },
-        {
-          plan: 'Ekstra',
-          elevation: 0,
-          color: 'orange darken-3',
-          description: 'Rekomandohet per detaje',
-          priceAll: '20.000 ALL',
-          yearly: '$1000',
-          features: [
-            {
-              icon: ' mdi-image',
-              text: '500 foto (shkrepje)',
-            },
-            {
-              icon: 'mdi-image-edit',
-              text: '25 Foto te edituara',
-            },
-            {
-              icon: 'mdi-arrange-bring-to-front',
-              text: 'Skenografi pa limit',
-            },
-            {
-              icon: 'mdi-image-filter-frames',
-              text: '5 foto te printuara (15x20)',
-            },
-            {
-              icon: 'mdi-image-filter-frames',
-              text: '10 foto te printuara (10x15)',
-            },
-          ],
-        },
-        {
-          plan: 'Super',
-          elevation: 0,
-          color: 'orange darken-3',
-          description: 'Rekomandohet per detaje',
-          priceAll: '30.000 ALL',
-          yearly: '$1000',
-          features: [
-            {
-              icon: ' mdi-image',
-              text: 'Foto pa limit (shkrepje)',
-            },
-            {
-              icon: 'mdi-image-edit',
-              text: '25 Fotot te edituara',
-            },
-            {
-              icon: 'mdi-arrange-bring-to-front',
-              text: 'Skenografi pa limit',
-            },
-            {
-              icon: 'mdi-image-filter-frames',
-              text: '30 Foto te lara(10x15)',
-            },
-            {
-              icon: 'mdi-video-account',
-              text: 'Video profesionale 4k',
-            },
-          ],
-        },
-      ],
-    }
+<script setup>
+import { computed } from 'vue'
+import { ref, onMounted } from 'vue'
+const showExplenation = ref(true)
+const planDuration = ref('photography')
+const cardClass = ref('card-style-for-photography')
+const rowDetailContainer = ref('row-detail-container-photo')
+const plans = ref([
+  {
+    plan: 'Small',
+    elevation: 0,
+    color: 'primary darken-1',
+    description: 'Rekomandohet per cifte',
+    priceAll: '9.000 ALL',
+    yearly: '$100',
+    features: [
+      {
+        icon: ' mdi-image',
+        text: '100 Foto (shkrepje)',
+      },
+      {
+        icon: 'mdi-image-edit',
+        text: '8 Foto te edituara',
+      },
+      {
+        icon: 'mdi-arrange-bring-to-front',
+        text: '2 Skenografi',
+      },
+    ],
   },
+  {
+    plan: 'Medium',
+    elevation: 0,
+    color: 'green darken-2',
+    description: 'Rekomandohet per familje',
+    priceAll: '12.000 ALL',
+    yearly: '$400',
+    features: [
+      {
+        icon: ' mdi-image',
+        text: '150 foto (shkrepje)',
+      },
+      {
+        icon: 'mdi-image-edit',
+        text: '12 Foto te edituara',
+      },
+      {
+        icon: 'mdi-arrange-bring-to-front',
+        text: '3 Skenografi',
+      },
+    ],
+  },
+  {
+    plan: 'Large',
+    elevation: 0,
+    color: 'orange darken-3',
+    description: 'Rekomandohet per familje',
+    priceAll: '15.000 ALL',
+    yearly: '$1000',
+    features: [
+      {
+        icon: ' mdi-image',
+        text: '250 foto (shkrepje)',
+      },
+      {
+        icon: 'mdi-image-edit',
+        text: '15 Foto te edituara',
+      },
+      {
+        icon: 'mdi-arrange-bring-to-front',
+        text: '4 Skenografi',
+      },
+      {
+        icon: 'mdi-image-filter-frames',
+        text: '10 Foto te printuara (10x15)',
+      },
+    ],
+  },
+  {
+    plan: 'Ekstra',
+    elevation: 0,
+    color: 'orange darken-3',
+    description: 'Rekomandohet per detaje',
+    priceAll: '20.000 ALL',
+    yearly: '$1000',
+    features: [
+      {
+        icon: ' mdi-image',
+        text: '500 foto (shkrepje)',
+      },
+      {
+        icon: 'mdi-image-edit',
+        text: '25 Foto te edituara',
+      },
+      {
+        icon: 'mdi-arrange-bring-to-front',
+        text: 'Skenografi pa limit',
+      },
+      {
+        icon: 'mdi-image-filter-frames',
+        text: '5 foto te printuara (15x20)',
+      },
+      {
+        icon: 'mdi-image-filter-frames',
+        text: '10 foto te printuara (10x15)',
+      },
+    ],
+  },
+  {
+    plan: 'Super',
+    elevation: 0,
+    color: 'orange darken-3',
+    description: 'Rekomandohet per detaje',
+    priceAll: '30.000 ALL',
+    yearly: '$1000',
+    features: [
+      {
+        icon: ' mdi-image',
+        text: 'Foto pa limit (shkrepje)',
+      },
+      {
+        icon: 'mdi-image-edit',
+        text: '25 Fotot te edituara',
+      },
+      {
+        icon: 'mdi-arrange-bring-to-front',
+        text: 'Skenografi pa limit',
+      },
+      {
+        icon: 'mdi-image-filter-frames',
+        text: '30 Foto te lara(10x15)',
+      },
+      {
+        icon: 'mdi-video-account',
+        text: 'Video profesionale 4k',
+      },
+    ],
+  },
+])
+const event = ref([
+  {
+    plan: 'Paketa 1',
+    elevation: 0,
+    color: 'primary darken-1',
+    description: 'Rekomandohet per cifte',
+    priceAll: '15.000 ALL',
+    features: [
+      {
+        icon: '  mdi-shape-square-plus',
+        text: 'Dekor (Baner, tullumbace,emer)',
+      },
+    ],
+  },
+  {
+    plan: 'Paketa 2',
+    elevation: 0,
+    color: 'green darken-1',
+    description: 'Rekomandohet per cifte',
+    priceAll: '25.000 ALL',
+    features: [
+      {
+        icon: ' mdi-shape-square-plus',
+        text: 'Dekor',
+      },
+      {
+        icon: ' mdi-image',
+        text: 'Foto ne studio',
+      },
+      {
+        icon: ' mdi-table-picnic',
+        text: 'Dekor tavoline',
+      },
+      {
+        icon: ' mdi-image-album',
+        text: '10 foto te lara',
+      },
+    ],
+  },
+  {
+    plan: 'Paketa 3',
+    elevation: 0,
+    color: 'green darken-1',
+    description: 'Rekomandohet per cifte',
+    priceAll: '25.000 ALL',
+    features: [
+      {
+        icon: ' mdi-shape-square-plus',
+        text: 'Dekor',
+      },
+      {
+        icon: ' mdi-image',
+        text: 'Foto ne event',
+      },
+      {
+        icon: ' mdi-image',
+        text: 'Foto ne studio',
+      },
+      {
+        icon: 'mdi-table-picnic',
+        text: 'Dekor tavoline',
+      },
+      {
+        icon: 'mdi-image-album',
+        text: '10 foto te lara',
+      },
+    ],
+  },
+  {
+    plan: 'Ekstra',
+    elevation: 0,
+    color: 'orange darken-1',
+    description: 'Rekomandohet per cifte',
+    priceAll: '25.000 ALL',
+    features: [
+      {
+        icon: '  mdi-shape-square-plus',
+        text: 'Dekor',
+      },
+      {
+        icon: ' mdi-image',
+        text: 'Foto ne event',
+      },
+      {
+        icon: ' mdi-image',
+        text: 'Foto ne studio',
+      },
+      {
+        icon: ' mdi-table-picnic',
+        text: 'Dekor tavoline',
+      },
+      {
+        icon: ' mdi-image-album',
+        text: '10 foto te lara',
+      },
+    ],
+  },
+  {
+    plan: 'New',
+    elevation: 0,
+    color: 'orange darken-1',
+    description: 'Rekomandohet per cifte',
+    priceAll: '700 EURO',
+    features: [
+      {
+        icon: ' mdi-shape-square-plus',
+        text: 'Dekor',
+      },
+      {
+        icon: ' mdi-image-multiple',
+        text: 'Foto ne event',
+      },
+      {
+        icon: ' mdi-image-multiple',
+        text: 'Foto ne studio',
+      },
+      {
+        icon: ' mdi-table-picnic',
+        text: 'Dekor tavoline',
+      },
+      {
+        icon: 'mdi-image-edit',
+        text: 'Fotopjate e personalizuar',
+      },
+      {
+        icon: 'mdi-party-popper',
+        text: 'Animator',
+      },
+      {
+        icon: ' mdi-video-4k-box',
+        text: 'Video 4K',
+      },
+      {
+        icon: 'mdi-image-album',
+        text: '10 foto te lara',
+      },
+    ],
+  },
+])
+
+// const cardClass = computed(()=>{
+//   if(planDuration=='photography'){
+//     console.log('eshte per foto')
+//     return 'card-style-for-photography'
+//   }else{
+//     console.log('nuk eshte per foto')
+//     return 'card-style-for-event'
+//   }
+// })
+
+const changePackage = (item) => {
+  console.log('u ndr', item)
+  if (item == 'event') {
+    cardClass.value = 'card-style-for-event'
+    rowDetailContainer.value = 'row-detail-container-event'
+    console.log(rowDetailContainer.value)
+    showExplenation.value = false
+  } else {
+    cardClass.value = 'card-style-for-photography'
+    rowDetailContainer.value = 'row-detail-container-photo'
+    console.log(rowDetailContainer.value)
+    showExplenation.value = true
+  }
 }
 </script>
 
 <style scoped>
 @media (min-width: 1310px) and (max-width: 1410px) {
-  .card-style {
+  .card-style-for-photography {
     max-height: 600px;
     justify-content: center !important;
   }
 }
 @media (max-width: 1310px) {
-  .card-style {
+  .card-style-for-photography {
     min-height: 550px;
     justify-content: center !important;
   }
-  .row-detail-container {
-  background-color: white;
-  min-height: 450px !important;
-}
+  .row-detail-container-photo {
+    background-color: white;
+    min-height: 450px !important;
+  }
 }
 
 .reservation-button {
   margin-top: -70px !important;
   min-width: 80% !important;
 }
-.card-style {
+.card-style-for-photography {
   max-height: 500px;
   justify-content: center !important;
 }
-.row-detail-container {
+
+.card-style-for-event {
+  max-width: 700px !important;
+  background-color: red;
+}
+
+.row-detail-container-photo {
   background-color: white;
-  min-height: 360px;
+  min-height: 380px;
+}
+.row-detail-container-event {
+  background-color: white;
+  min-height: 480px;
 }
 .row-container {
   width: 100% !important;

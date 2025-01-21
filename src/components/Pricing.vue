@@ -266,7 +266,7 @@ const event = ref([
     elevation: 0,
     color: 'green darken-1',
     description: 'Rekomandohet per cifte',
-    priceAll: '25.000 ALL',
+    priceAll: '30.000 ALL',
     features: [
       {
         icon: ' mdi-shape-square-plus',
@@ -295,7 +295,7 @@ const event = ref([
     elevation: 0,
     color: 'orange darken-1',
     description: 'Rekomandohet per cifte',
-    priceAll: '25.000 ALL',
+    priceAll: '55.000 ALL',
     features: [
       {
         icon: '  mdi-shape-square-plus',

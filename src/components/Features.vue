@@ -53,7 +53,6 @@
             class="close-btn"
             style="position: absolute; top: 10px; right: 10px; z-index: 1"
           >
-
             <v-icon>mdi-close</v-icon>
           </v-btn>
           <v-card-title class="row-container-for-information-title-style">
@@ -97,7 +96,15 @@
           <v-row class="row-container-for-information-text-area">
             <v-textarea v-model="moreMessage" label="Me teper..." variant="outlined"></v-textarea>
           </v-row>
-
+          <v-row class="justify-center">
+            <v-date-picker
+              @update:model-value="formatDate"
+              v-model="dateToSend"
+              color="primary"
+              :title="''"
+            >
+            </v-date-picker>
+          </v-row>
           <v-card-actions class="reserve-button-style">
             <v-spacer></v-spacer>
 
@@ -116,7 +123,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
+
 const cards = ref([
   {
     title: 'Krijimi i Kujtimeve të Paharrueshme',
@@ -139,9 +147,27 @@ const cards = ref([
 ])
 const nameValue = ref(null)
 const numberValue = ref(null)
+const dateToSend = ref(null)
 const packageValue = ref(null)
 const surnameValue = ref(null)
 const moreMessage = ref(null)
+const sendToWaDate = ref(null)
+const formatDate = (date) => {
+  if (!date) return '' // Kontrolloni nëse data është null ose undefined
+  const d = new Date(date)
+  if (isNaN(d.getTime())) return '' // Kontrolloni nëse data është e vlefshme
+  const day = String(d.getDate()).padStart(2, '0')
+  // console.log(day)
+  const month = String(d.getMonth() + 1).padStart(2, '0') // Muajt janë zero-indeksuar
+  // console.log(month)
+
+  const year = d.getFullYear()
+  // console.log(year)
+
+  dateToSend.value = `${day}/${month}/${year}`
+  sendToWaDate.value = dateToSend.value
+  // console.log(dateToSend.value)
+}
 
 const sendMessageToWhatssApp = () => {
   console.log('respekte')
@@ -149,11 +175,11 @@ const sendMessageToWhatssApp = () => {
     alert('Ju lutem plotësoni të gjitha fushat!')
     return
   }
-  console.log(
-    `His/Her name is: ${nameValue.value},${numberValue.value},${packageValue.value},${surnameValue.value}`,
-  )
+  // console.log(
+  //   `His/Her name is: ${nameValue.value},${numberValue.value},${packageValue.value},${surnameValue.value}`,
+  // )
   const message = `Pershendetje! Une jam ${nameValue.value} ${surnameValue.value},dhe isha i/e interesuar per te bere setin me paketen
-  ${packageValue.value} Per te bere rezervimin ky eshte numri im i telefonit ${numberValue.value}. SHENIM: ${moreMessage.value}™`
+  ${packageValue.value}, ne date ${sendToWaDate.value}. Per te bere rezervimin ky eshte numri im i telefonit ${numberValue.value}. SHENIM: ${moreMessage.value}™`
   const phoneNumber = '+355697496384'
   if (
     (numberValue.value.includes('+') && numberValue.value.length > 12) ||

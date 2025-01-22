@@ -19,6 +19,10 @@
                 marrin pjesë fëmijët dhe prindërit, ndërsa për familjarët e tjerë ka një pagesë
                 shtesë prej 1000 ALL, duke përfshirë edhe një foto të edituar në Photoshop.
               </p>
+              <p v-else style="width: 65%" class="my-5 mx-auto title">
+                Paketat qe jane shfaqur me poshte jane paketat baze qe Anna Dekor ofron per ju por detajet
+                e seciles pakete mund te modifikohen ne baze te prefrences suaj.
+              </p>
               <div class="text-center">
                 <v-btn-toggle
                   v-model="planDuration"
@@ -74,11 +78,18 @@
               </v-list>
             </v-row>
             <v-row class="justify-center">
-              <v-btn color="primary" rounded class="reservation-button"> Rezervo </v-btn>
+              <v-btn   @click="isDialogOpen = true" color="primary" rounded class="reservation-button"> Rezervo </v-btn>
             </v-row>
+
           </v-card>
         </v-col>
       </v-row>
+      <v-dialog v-model="isDialogOpen" max-width="600">
+        <ContactUsDialog
+          :title="'Set Fotografik'"
+          @close="isDialogOpen = false"
+        />
+      </v-dialog>
     </v-container>
   </section>
 </template>
@@ -88,8 +99,13 @@ import { computed } from 'vue'
 import { ref, onMounted } from 'vue'
 const showExplenation = ref(true)
 const planDuration = ref('photography')
+import ContactUsDialog from '@/components/ContactUsDialog.vue'
 const cardClass = ref('card-style-for-photography')
 const rowDetailContainer = ref('row-detail-container-photo')
+
+
+const isDialogOpen = ref(false)
+
 const plans = ref([
   {
     plan: 'Small',

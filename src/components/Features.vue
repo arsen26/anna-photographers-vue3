@@ -10,120 +10,62 @@
         </v-col>
       </v-row>
       <v-row style="color: white">
-        <v-col v-for="(card, index) in cards" :key="index" cols="12" sm="4" class="text-center">
+        <v-col
+          v-for="(card, index) in cards"
+          :key="index"
+          cols="12"
+          sm="4"
+          class="text-center"
+        >
           <v-avatar
             size="80"
             class="display-1 white font-weight-bold number-style mb-5"
             style="opacity: 1.15; background-color: white; font-size: xx-large"
-            >{{ card.callout }}</v-avatar
           >
+            {{ card.callout }}
+          </v-avatar>
 
-          <div class="title text-uppercase mt-1 mb-4 title-style" v-text="card.title"></div>
+          <div
+            class="title text-uppercase mt-1 mb-4 title-style"
+            v-text="card.title"
+          ></div>
 
           <p v-text="card.text"></p>
-          <v-row no-gutters>
-            <v-col cols="12"> </v-col>
-          </v-row>
         </v-col>
       </v-row>
+
+      <!-- Button to open the dialog -->
+      <v-row class="justify-center">
+        <v-btn
+          class="reserve-now-button-style"
+          @click="isDialogOpen = true"
+          x-large
+          rounded
+          color="white button-text mt-10 px-16"
+        >
+          <v-icon dark left>mdi-check-bold</v-icon>
+          Rezervo tani setin tend
+        </v-btn>
+      </v-row>
+
+      <!-- Dialog -->
+      <v-dialog v-model="isDialogOpen" max-width="600">
+        <ContactUsDialog
+          :title="'Set Fotografik'"
+          @close="isDialogOpen = false"
+        />
+      </v-dialog>
     </v-container>
-
-    <v-dialog max-width="500">
-      <template v-slot:activator="{ props: activatorProps }">
-        <v-row class="justify-center">
-          <v-btn
-            class="reserve-now-button-style"
-            v-bind="activatorProps"
-            x-large
-            rounded
-            color="white button-text mt-10 px-16"
-          >
-            <v-icon dark left> mdi-check-bold </v-icon>Rezervo tani setin tend
-          </v-btn>
-        </v-row>
-      </template>
-
-      <template v-slot:default="{ isActive }">
-        <v-card>
-          <v-btn
-            icon
-            large
-            variant="plain"
-            @click="isActive.value = false"
-            class="close-btn"
-            style="position: absolute; top: 10px; right: 10px; z-index: 1"
-          >
-            <v-icon>mdi-close</v-icon>
-          </v-btn>
-          <v-card-title class="row-container-for-information-title-style">
-            Kontakto per rezervim
-          </v-card-title>
-          <v-card-text>
-            Plotesoni te dhenat e meposhtme per te kontaktuar me stafin e Anna Photographers.
-          </v-card-text>
-
-          <v-row class="row-container-for-information">
-            <v-col>
-              <v-text-field v-model="nameValue" label="Emer" variant="outlined"></v-text-field>
-            </v-col>
-            <v-col>
-              <v-text-field
-                v-model="surnameValue"
-                label="Mbiemer"
-                variant="outlined"
-              ></v-text-field>
-            </v-col>
-          </v-row>
-
-          <v-row class="row-container-for-information">
-            <v-col>
-              <v-text-field
-                hide-spin-buttons="true"
-                type="number"
-                v-model="numberValue"
-                label="Nr Tel"
-                variant="outlined"
-              ></v-text-field>
-            </v-col>
-            <v-col>
-              <v-text-field
-                v-model="packageValue"
-                label="Paketa qe interesoheni"
-                variant="outlined"
-              ></v-text-field>
-            </v-col>
-          </v-row>
-          <v-row class="row-container-for-information-text-area">
-            <v-textarea v-model="moreMessage" label="Me teper..." variant="outlined"></v-textarea>
-          </v-row>
-          <v-row class="justify-center">
-            <v-date-picker
-              @update:model-value="formatDate"
-              v-model="dateToSend"
-              color="primary"
-              :title="''"
-            >
-            </v-date-picker>
-          </v-row>
-          <v-card-actions class="reserve-button-style">
-            <v-spacer></v-spacer>
-
-            <v-btn
-              prepend-icon="mdi-check-circle"
-              variant="outlined"
-              color="primary"
-              @click="sendMessageToWhatssApp"
-              >Rezervoni</v-btn
-            >
-          </v-card-actions>
-        </v-card>
-      </template>
-    </v-dialog>
   </section>
 </template>
 
 <script setup>
 import { ref, onMounted, watch } from 'vue'
+import { VDateInput } from 'vuetify/labs/VDateInput'
+import ContactUsDialog from '@/components/ContactUsDialog.vue'
+const selectedPackage = ref('')
+
+const isDialogOpen = ref(false)
 
 const cards = ref([
   {
@@ -152,22 +94,22 @@ const packageValue = ref(null)
 const surnameValue = ref(null)
 const moreMessage = ref(null)
 const sendToWaDate = ref(null)
-const formatDate = (date) => {
-  if (!date) return '' // Kontrolloni nëse data është null ose undefined
-  const d = new Date(date)
-  if (isNaN(d.getTime())) return '' // Kontrolloni nëse data është e vlefshme
-  const day = String(d.getDate()).padStart(2, '0')
-  // console.log(day)
-  const month = String(d.getMonth() + 1).padStart(2, '0') // Muajt janë zero-indeksuar
-  // console.log(month)
+// const formatDate = (date) => {
+//   if (!date) return '' // Kontrolloni nëse data është null ose undefined
+//   const d = new Date(date)
+//   if (isNaN(d.getTime())) return '' // Kontrolloni nëse data është e vlefshme
+//   const day = String(d.getDate()).padStart(2, '0')
+//   // console.log(day)
+//   const month = String(d.getMonth() + 1).padStart(2, '0') // Muajt janë zero-indeksuar
+//   // console.log(month)
 
-  const year = d.getFullYear()
-  // console.log(year)
+//   const year = d.getFullYear()
+//   // console.log(year)
 
-  dateToSend.value = `${day}/${month}/${year}`
-  sendToWaDate.value = dateToSend.value
-  // console.log(dateToSend.value)
-}
+//   dateToSend.value = `${day}/${month}/${year}`
+//   sendToWaDate.value = dateToSend.value
+//   // console.log(dateToSend.value)
+// }
 
 const sendMessageToWhatssApp = () => {
   console.log('respekte')
@@ -194,15 +136,7 @@ const sendMessageToWhatssApp = () => {
 </script>
 
 <style scoped>
-.row-container-for-information-title-style {
-  padding-left: 23px;
-  margin-bottom: -10px;
-  font-weight: 600;
-  font-size: large;
-}
-.reserve-button-style {
-  padding-right: 19px;
-}
+
 @media (max-width: 900px) {
   .reserve-now-button-style {
     width: 80%;
@@ -210,20 +144,10 @@ const sendMessageToWhatssApp = () => {
     justify-content: center;
   }
 }
-.row-container-for-information {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.row-container-for-information-text-area {
-  padding-left: 32px;
-  padding-right: 32px;
-}
+
 .title-style {
   font-weight: 600;
   font-size: large;
-}
-.button-text {
-  color: #ef476f;
 }
 .number-style {
   color: #ef476f;

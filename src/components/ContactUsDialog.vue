@@ -70,7 +70,7 @@
         v-model="moreMessage"
         label="Me teper..."
         variant="outlined"
-        
+
       >{{ packageType }} </v-textarea>
     </v-row>
 
@@ -151,7 +151,7 @@ const sendMessageToWhatssApp = () => {
     return;
   }
 
-  const message = `Pershendetje! Une jam ${nameValue.value} ${surnameValue.value}, dhe isha i/e interesuar per te bere setin me paketen
+  const message = `Pershendetje! Une jam ${nameValue.value} ${surnameValue.value}, dhe isha i/e interesuar per te bere
   ${props.packageValue}, ne date ${sendToWaDate.value}. Per te bere rezervimin ky eshte numri im i telefonit ${numberValue.value}. SHENIM: ${moreMessage.value}™`;
   const phoneNumber = '+355697496384';
 

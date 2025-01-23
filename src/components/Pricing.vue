@@ -80,12 +80,7 @@
               </v-list>
             </v-row>
             <v-row class="justify-center">
-              <v-btn
-                @click="openDialog(plan)"
-                color="primary"
-                rounded
-                class="reservation-button"
-              >
+              <v-btn @click="openDialog(plan)" color="primary" rounded class="reservation-button">
                 Rezervo
               </v-btn>
             </v-row>
@@ -96,9 +91,9 @@
         <ContactUsDialog
           :title="planDuration == 'photography' ? dialogTitlePhotography : dialogTitleEvent"
           @close="isDialogOpen = false"
-          :packageValue = "planDuration == 'photography' ? dialogTitlePhotography : dialogTitleEvent"
-          :packageType = "choosedTitle"
-          />
+          :packageValue="planDuration == 'photography' ? dialogTitlePhotography : dialogTitleEvent"
+          :packageType="choosedTitle"
+        />
       </v-dialog>
     </v-container>
   </section>
@@ -117,10 +112,10 @@ const isDialogOpen = ref(false)
 const dialogTitlePhotography = ref('Set fotografik')
 const dialogTitleEvent = ref('Dekor eventi')
 const choosedTitle = ref(null)
-const openDialog = (item) =>{
+const openDialog = (item) => {
   console.log(item)
   choosedTitle.value = `Paketa: ${item.plan}`
-  isDialogOpen.value=true
+  isDialogOpen.value = true
 }
 const plans = ref([
   {

@@ -70,11 +70,11 @@
         v-model="moreMessage"
         label="Me teper..."
         variant="outlined"
-        density
-      >{{ packageType }} 123</v-textarea>
+        
+      >{{ packageType }} </v-textarea>
     </v-row>
 
-    <v-row class="justify-center">
+    <v-row class="justify-center calendar-style">
       <v-date-picker
         @update:model-value="formatDate"
         v-model="dateToSend"
@@ -167,6 +167,10 @@ const sendMessageToWhatssApp = () => {
 };
 </script>
 <style scoped>
+.calendar-style{
+  padding-left: 31px !important;
+  padding-right: 30px !important;
+}
 .card-form-style {
   max-width: 500px;
   max-height: 900px;

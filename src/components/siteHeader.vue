@@ -63,6 +63,7 @@ const navigateTo = (path) => {
   }
   .menu-mobile-style {
     visibility: visible;
+    font-size: 25px;
     display: block;
   }
 

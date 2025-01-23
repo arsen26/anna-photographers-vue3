@@ -5,7 +5,9 @@
         <v-col>
           <v-row no-gutters>
             <v-col class="text-center">
-              <h2 class="text-h4 text-md-h3 text-center font-weight-black text-capitalize mb-4">
+              <h2
+                class="text-h4 text-md-h3 text-center font-weight-black text-capitalize mb-4 title-style"
+              >
                 Tabela e ofertave
               </h2>
 
@@ -20,8 +22,8 @@
                 shtesë prej 1000 ALL, duke përfshirë edhe një foto të edituar në Photoshop.
               </p>
               <p v-else style="width: 65%" class="my-5 mx-auto title">
-                Paketat qe jane shfaqur me poshte jane paketat baze qe Anna Dekor ofron per ju por detajet
-                e seciles pakete mund te modifikohen ne baze te prefrences suaj.
+                Paketat qe jane shfaqur me poshte jane paketat baze qe Anna Dekor ofron per ju por
+                detajet e seciles pakete mund te modifikohen ne baze te prefrences suaj.
               </p>
               <div class="text-center">
                 <v-btn-toggle
@@ -78,17 +80,25 @@
               </v-list>
             </v-row>
             <v-row class="justify-center">
-              <v-btn   @click="isDialogOpen = true" color="primary" rounded class="reservation-button"> Rezervo </v-btn>
+              <v-btn
+                @click="openDialog(plan)"
+                color="primary"
+                rounded
+                class="reservation-button"
+              >
+                Rezervo
+              </v-btn>
             </v-row>
-
           </v-card>
         </v-col>
       </v-row>
       <v-dialog v-model="isDialogOpen" max-width="600">
         <ContactUsDialog
-          :title="'Set Fotografik'"
+          :title="planDuration == 'photography' ? dialogTitlePhotography : dialogTitleEvent"
           @close="isDialogOpen = false"
-        />
+          :packageValue = "planDuration == 'photography' ? dialogTitlePhotography : dialogTitleEvent"
+          :packageType = "choosedTitle"
+          />
       </v-dialog>
     </v-container>
   </section>
@@ -103,9 +113,15 @@ import ContactUsDialog from '@/components/ContactUsDialog.vue'
 const cardClass = ref('card-style-for-photography')
 const rowDetailContainer = ref('row-detail-container-photo')
 
-
 const isDialogOpen = ref(false)
-
+const dialogTitlePhotography = ref('Set fotografik')
+const dialogTitleEvent = ref('Dekor eventi')
+const choosedTitle = ref(null)
+const openDialog = (item) =>{
+  console.log(item)
+  choosedTitle.value = `Paketa: ${item.plan}`
+  isDialogOpen.value=true
+}
 const plans = ref([
   {
     plan: 'Small',
@@ -405,6 +421,10 @@ const changePackage = (item) => {
 </script>
 
 <style scoped>
+.title-style {
+  font-family: 'chonburi';
+  letter-spacing: 0.2rem !important;
+}
 @media (min-width: 1310px) and (max-width: 1410px) {
   .card-style-for-photography {
     max-height: 600px;

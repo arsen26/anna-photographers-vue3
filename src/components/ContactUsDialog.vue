@@ -57,10 +57,10 @@
         <v-text-field
           color="primary"
           :value="packageValue"
-          v-model="packageValue"
-          :label="packageLabel"
+          :label="packageValue ? '' : packageLabel"
           variant="outlined"
-        />
+          >{{  }}</v-text-field
+        >
       </v-col>
     </v-row>
 
@@ -71,7 +71,7 @@
         label="Me teper..."
         variant="outlined"
         density
-      ></v-textarea>
+      >{{ packageType }} 123</v-textarea>
     </v-row>
 
     <v-row class="justify-center">
@@ -98,16 +98,20 @@
 </template>
 <script setup>
 import { ref, onMounted } from 'vue'
-const packageValue = ref('')
+// const packageValue = ref('')
 const props = defineProps({
   title: {
     type: String,
     required: true,
   },
-  // packageValue: {
-  //   type: String,
-  //   required: true,
-  // },
+  packageValue: {
+    type: String,
+    required: true,
+  },
+  packageType: {
+    type: String,
+    required: true,
+  },
   packageLabel: {
     type: String,
     default: 'Paketa që interesoheni',
@@ -121,6 +125,7 @@ const surnameValue = ref('')
 const numberValue = ref('')
 const sendToWaDate = ref(null)
 const moreMessage = ref('')
+moreMessage.value = props.packageType
 const dateToSend = ref(null)
 const formatDate = (date) => {
   if (!date) return ''
@@ -141,27 +146,25 @@ const closeCard = () => {
 }
 
 const sendMessageToWhatssApp = () => {
-  console.log('respekte')
-  if (!nameValue.value || !surnameValue.value || !numberValue.value || !packageValue.value) {
-    alert('Ju lutem plotësoni të gjitha fushat!')
-    return
+  if (!nameValue.value || !surnameValue.value || !numberValue.value || !props.packageValue) {
+    alert('Ju lutem plotësoni të gjitha fushat!');
+    return;
   }
-  // console.log(
-  //   `His/Her name is: ${nameValue.value},${numberValue.value},${packageValue.value},${surnameValue.value}`,
-  // )
-  const message = `Pershendetje! Une jam ${nameValue.value} ${surnameValue.value},dhe isha i/e interesuar per te bere setin me paketen
-  ${packageValue.value}, ne date ${sendToWaDate.value}. Per te bere rezervimin ky eshte numri im i telefonit ${numberValue.value}. SHENIM: ${moreMessage.value}™`
-  const phoneNumber = '+355697496384'
+
+  const message = `Pershendetje! Une jam ${nameValue.value} ${surnameValue.value}, dhe isha i/e interesuar per te bere setin me paketen
+  ${props.packageValue}, ne date ${sendToWaDate.value}. Per te bere rezervimin ky eshte numri im i telefonit ${numberValue.value}. SHENIM: ${moreMessage.value}™`;
+  const phoneNumber = '+355697496384';
+
   if (
     (numberValue.value.includes('+') && numberValue.value.length > 12) ||
     (!numberValue.value.includes('+') && numberValue.value.length > 10)
   ) {
-    alert('Numri që keni vendosur nuk është i saktë')
+    alert('Numri që keni vendosur nuk është i saktë');
   } else {
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
-    window.open(url, '_blank')
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
   }
-}
+};
 </script>
 <style scoped>
 .card-form-style {

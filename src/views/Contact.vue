@@ -6,7 +6,7 @@
         <v-container>
           <v-row class="py-16">
             <v-col md="5" cols="12">
-              <div class="text-h6 font-weight-bold mb-5">Our Office</div>
+              <div class="text-h6 font-weight-bold mb-5 title-style">Our Office</div>
               <v-list two-line class="transparent">
                 <v-list-item>
                   <v-list-item-icon>
@@ -49,7 +49,7 @@
                   </v-list-item-content>
                 </v-list-item>
               </v-list>
-              <div class="text-h6 font-weight-bold mt-12 mb-5">
+              <div class="text-h6 font-weight-bold mt-12 mb-5 title-style">
                 Business Hours
               </div>
               <v-list two-line class="transparent">
@@ -85,7 +85,7 @@
               </v-list>
             </v-col>
             <v-col md="7" cols="12">
-              <div class="text-h4 font-weight-black mb-8">Dergoni Email</div>
+              <div class="text-h4 font-weight-black mb-8 title-style">Dergoni Email</div>
 
               <footerContactForm />
             </v-col>
@@ -136,6 +136,10 @@ const heroAlt= ref([
 </script>
 
 <style scoped>
+.title-style{
+  font-family: "chonburi";
+
+}
 #footer-top {
   display: none !important;
 }

@@ -3,7 +3,7 @@
     <v-container fluid class="text-center">
       <v-row>
         <v-col>
-          <h2 class="text-h4 text-sm-h3 text-capitalize font-weight-black mb-4">Skuadra</h2>
+          <h2 class="text-sm-h3 text-capitalize font-weight-black mb-4 title-style">Skuadra</h2>
           <p>Kush përkujdeset për detajet dhe përsosmëritë?</p>
           <div>
             <p>
@@ -27,7 +27,11 @@
             shaped
           >
             <v-avatar size="240"
-              ><img class="avatar-image-style" :src="`${item.photo}`" :lazy-src="`${item.photo}`" alt="Stafi"
+              ><img
+                class="avatar-image-style"
+                :src="`${item.photo}`"
+                :lazy-src="`${item.photo}`"
+                alt="Stafi"
             /></v-avatar>
             <div class="text-h5 text-uppercase font-weight-black mt-6 mb-2">
               {{ item.name }}
@@ -62,10 +66,14 @@ const sendToEmail = (person) => {
 </script>
 
 <style scoped>
+.title-style {
+  font-family: 'chonburi';
+  letter-spacing: 0.2rem !important;
+}
 .email-at-teammember {
   cursor: pointer;
 }
-.avatar-image-style{
-    object-fit:contain !important;
+.avatar-image-style {
+  object-fit: contain !important;
 }
 </style>

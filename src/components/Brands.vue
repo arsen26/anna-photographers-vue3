@@ -9,7 +9,7 @@
           <h3
             style="color: #f78c6b"
             :class="$vuetify.theme.dark ? 'grey--text' : null"
-            class="text-h4 text-center font-weight-light mb-xs-4"
+            class="text-h4 text-center font-weight-light mb-xs-4 title-style"
           >
             Bashkëpunëtorët Tanë
           </h3>
@@ -69,3 +69,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.title-style{
+  font-family: "chonburi";
+
+}
+</style>

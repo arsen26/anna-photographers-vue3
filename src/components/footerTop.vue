@@ -108,7 +108,7 @@
           <v-divider vertical></v-divider>
         </v-col>
         <v-col cols="12" md="5" class="py-12">
-          <h3 class="mb-8">Dergoni Email</h3>
+          <h3 class="mb-8 title-style">Dergoni Email</h3>
           <footerContactForm />
         </v-col>
       </v-row>
@@ -178,6 +178,10 @@ export default {
 }
 </script>
 <style scoped>
+.title-style{
+  font-family: "chonburi";
+
+}
 .redirect-style:hover {
   color: rgb(70, 70, 255) !important;
   cursor: pointer;

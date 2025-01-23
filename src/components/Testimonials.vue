@@ -1,6 +1,6 @@
 <template>
   <section id="testimonials" :class="themeClass" class="py-16">
-    <h2 class="text-h4 text-md-h3 text-center font-weight-black mb-8 my-8">
+    <h2 class="text-h4 text-md-h3 text-center font-weight-black mb-8 my-8 title-style">
       Vlersime nga klientet
     </h2>
     <v-col style="padding-top: 5px">
@@ -51,7 +51,9 @@ const testimonials = ref([
   position: relative; /* Mund të përdorësh absolute ose fixed në varësi të nevojës */
   z-index: 9999; /* Sa më i lartë numri, aq më sipër do të jetë elementi */
 }
-
+.title-style{
+  font-family: "chonburi";
+}
 .review-style {
   align-items: center;
   justify-content: center;

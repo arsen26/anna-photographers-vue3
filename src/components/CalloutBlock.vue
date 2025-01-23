@@ -12,7 +12,7 @@
                 Na ndiqni ne rrjetet sociale
               </h2>
 
-              <p style="color: #f78c6b">
+              <p  style="color: #f78c6b;  font-family: 'chonburi'">
                 Ndiqeni live punen tone, ne rrjetet tona sociale per te marre
                 perditesimet me te fundit rreth nesh.
               </p>
@@ -83,11 +83,12 @@ const social = ref( [
 
 <style scoped>
 .section-style {
-  background-color: rgba(128, 128, 128, 0.1); 
+  background-color: rgba(128, 128, 128, 0.1);
 }
 
 .follow-us-on-social-title {
   font-size: 45px;
+  font-family: "chonburi";
   color: #f78c6b;
 }
 </style>

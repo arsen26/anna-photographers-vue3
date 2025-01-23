@@ -13,7 +13,7 @@
       >
         <v-row class="text-container">
           <v-col>
-            <h1 class="text-style text-md-h2 text-sm-h3 text-h4 font-weight-black text-center">
+            <h1 class="text-style text-md-h1 text-sm-h3 text-h4 text-center">
               {{ item.heading.toUpperCase() }}
             </h1>
           </v-col>
@@ -48,6 +48,11 @@ const heroAlt = ref(props.heroAlt)
 }
 .text-style {
   color: white;
+  font-family: "Jaro";
+  /* font-optical-sizing: auto; */
+  font-weight: 300;
+  letter-spacing: .5rem !important;
+  /* font-style: normal; */
 }
 .text-container {
   align-items: center;

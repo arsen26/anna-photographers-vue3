@@ -3,8 +3,8 @@
     <v-container>
       <v-row style="color: white">
         <v-col class="text-center">
-          <h2 class="text-h4 text-md-h3 text-center font-weight-black">3 Arsye</h2>
-          <div class="text-h5 text-md-h4 text-center font-weight-black py-3 mb-10">
+          <h2 class="text-h4 text-md-h3 text-center font-weight-black title-style">3 Arsye</h2>
+          <div class="text-h5 text-md-h4 text-center font-weight-black py-3 mb-10 title-style">
             Pse duhet te na zgjidhni ne?
           </div>
         </v-col>
@@ -87,56 +87,15 @@ const cards = ref([
     callout: '3',
   },
 ])
-const nameValue = ref(null)
-const numberValue = ref(null)
-const dateToSend = ref(null)
-const packageValue = ref(null)
-const surnameValue = ref(null)
-const moreMessage = ref(null)
-const sendToWaDate = ref(null)
-// const formatDate = (date) => {
-//   if (!date) return '' // Kontrolloni nëse data është null ose undefined
-//   const d = new Date(date)
-//   if (isNaN(d.getTime())) return '' // Kontrolloni nëse data është e vlefshme
-//   const day = String(d.getDate()).padStart(2, '0')
-//   // console.log(day)
-//   const month = String(d.getMonth() + 1).padStart(2, '0') // Muajt janë zero-indeksuar
-//   // console.log(month)
 
-//   const year = d.getFullYear()
-//   // console.log(year)
 
-//   dateToSend.value = `${day}/${month}/${year}`
-//   sendToWaDate.value = dateToSend.value
-//   // console.log(dateToSend.value)
-// }
-
-const sendMessageToWhatssApp = () => {
-  console.log('respekte')
-  if (!nameValue.value || !surnameValue.value || !numberValue.value || !packageValue.value) {
-    alert('Ju lutem plotësoni të gjitha fushat!')
-    return
-  }
-  // console.log(
-  //   `His/Her name is: ${nameValue.value},${numberValue.value},${packageValue.value},${surnameValue.value}`,
-  // )
-  const message = `Pershendetje! Une jam ${nameValue.value} ${surnameValue.value},dhe isha i/e interesuar per te bere setin me paketen
-  ${packageValue.value}, ne date ${sendToWaDate.value}. Per te bere rezervimin ky eshte numri im i telefonit ${numberValue.value}. SHENIM: ${moreMessage.value}™`
-  const phoneNumber = '+355697496384'
-  if (
-    (numberValue.value.includes('+') && numberValue.value.length > 12) ||
-    (!numberValue.value.includes('+') && numberValue.value.length > 10)
-  ) {
-    alert('Numri që keni vendosur nuk është i saktë')
-  } else {
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
-    window.open(url, '_blank')
-  }
-}
 </script>
 
 <style scoped>
+.title-style{
+  font-family: "chonburi";
 
+}
 @media (max-width: 900px) {
   .reserve-now-button-style {
     width: 80%;

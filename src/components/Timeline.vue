@@ -1,7 +1,7 @@
 <template>
   <section id="timeline" class="py-16">
     <v-container>
-      <h2 class="text-h3 text-center font-weight-black mb-8">Rrugetimi yne</h2>
+      <h2 class="text-h3 text-center font-weight-black mb-8 title-style">Rrugetimi yne</h2>
         <v-timeline>
           <v-timeline-item v-for="(year, i) in years"  :dot-color="year.color" small>
             <template v-slot:opposite>
@@ -11,7 +11,7 @@
               ></span>
             </template>
             <div class="py-4">
-              <h2 :class="`headline font-weight-light mb-4 text-${year.color}`">
+              <h2 :class="`headline timeline-title-style font-weight-light mb-4 text-${year.color}`">
                 {{ year.title }}
               </h2>
               <div></div>
@@ -62,3 +62,14 @@ const years = ref([
   },
 ])
 </script>
+
+<style scoped>
+.title-style{
+  font-family: "chonburi";
+  letter-spacing: .5rem !important;
+}
+.timeline-title-style{
+  font-family: "Jaro";
+  letter-spacing: .1rem !important;
+}
+</style>

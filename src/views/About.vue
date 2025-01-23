@@ -6,7 +6,7 @@
         <v-container>
           <v-row class="py-16">
             <v-col cols="12">
-              <h2 class="text-h4 text-md-h3 text-center font-weight-black text-capitalize">
+              <h2 class="text-md-h3 text-center font-weight-black text-capitalize title-style">
                 Kush jemi ne?
               </h2>
               <!-- <h3
@@ -61,7 +61,7 @@
           </v-col>
           <v-col cols="12" md="6" align-self="center">
             <div class="pa-lg-16 pa-md-10 px-4 py-16">
-              <h2 class="text-h3 text-center font-weight-black">
+              <h2 class="text-h3 text-center font-weight-black title-style">
                 {{ items.title }}
               </h2>
               <h3 class="text-h5 text-uppercase font-weight-thin text-center my-8">
@@ -121,8 +121,8 @@ const ourTeam = ref([
 console.log(ourTeam.value,'=>> our team')
 const ourVision = ref([
   {
-    title: 'Our Vision',
-    subtitle: 'Our Vision Subtitle',
+    title: 'Vizioni yne',
+    subtitle: 'Cfare na pret ne te ardhmen?',
     photo: WorkingPerson,
     description:
       ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium. Doloremque laudantium, totam rem aperiam. ',
@@ -142,3 +142,10 @@ const head = () => {
   }
 }
 </script>
+
+<style scoped>
+.title-style{
+  font-family: "chonburi";
+  letter-spacing: .2rem !important;
+}
+</style>

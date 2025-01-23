@@ -6,7 +6,7 @@
           <v-icon x-large dark>mdi-camera</v-icon>
         </v-avatar>
 
-        <h2 class="text-h4 text-md-h3 text-center font-weight-black mb-7">
+        <h2 class="text-h4 text-md-h3 text-center font-weight-black mb-7 title-style">
           3 Arsye pse duhet te beni sa me shum fotografi
         </h2>
         <p class="title font-weight-thin">
@@ -26,7 +26,7 @@
               <div class="pr-2">
                 <div class="text--disabled" v-text="card.subtitle"></div>
                 <h4
-                  class="text-uppercase mt-1 mb-4"
+                  class="text-uppercase mt-1 mb-4 title-style"
                   style="letter-spacing: 0.15em"
                   v-text="card.title"
                 ></h4>
@@ -75,3 +75,10 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.title-style{
+  font-family: "chonburi";
+  letter-spacing: .2rem !important;
+}
+</style>

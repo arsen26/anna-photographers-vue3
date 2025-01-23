@@ -65,7 +65,7 @@
               {{ plan.priceAll }}
             </h5>
             <br />
-            <v-row :class="rowDetailContainer">
+            <v-row :class="rowDetailContainer" class="row-style-general">
               <v-list>
                 <v-list-item v-for="(feature, ik) in plan.features" :key="`feature-${ik}`" dense>
                   <template v-slot:prepend>
@@ -416,6 +416,11 @@ const changePackage = (item) => {
 </script>
 
 <style scoped>
+@media (max-width: 930px) {
+  .row-style-general {
+    justify-content: center;
+  }
+}
 .title-style {
   font-family: 'chonburi';
   letter-spacing: 0.2rem !important;

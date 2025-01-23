@@ -23,7 +23,9 @@
     <v-list lines="one">
       <template v-for="(item, i) in items" :key="i">
         <v-list-item :prepend-icon="item.icon" :to="item.to">
-          <v-list-item-title class="text-uppercase menu-text-mobile">{{ item.title }}</v-list-item-title>
+          <v-list-item-title class="text-uppercase menu-text-mobile">{{
+            item.title
+          }}</v-list-item-title>
         </v-list-item>
       </template>
     </v-list>
@@ -58,7 +60,7 @@ const navigateTo = (path) => {
 <style scoped>
 /* Mobile Styles */
 @media (max-width: 960px) {
-  .menu-text-mobile{
+  .menu-text-mobile {
     margin-left: 0px !important;
   }
   .menu-mobile-style {

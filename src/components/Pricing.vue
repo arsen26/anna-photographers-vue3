@@ -80,7 +80,7 @@
               </v-list>
             </v-row>
             <v-row class="justify-center">
-              <v-btn @click="openDialog(plan)" color="primary" rounded class="reservation-button">
+              <v-btn @click="openDialog(plan)" color="#073b4c" rounded class="reservation-button">
                 Rezervo
               </v-btn>
             </v-row>
@@ -423,6 +423,7 @@ const changePackage = (item) => {
 }
 .title-style {
   font-family: 'chonburi';
+  color: #ef476f;
   letter-spacing: 0.2rem !important;
 }
 @media (min-width: 1310px) and (max-width: 1410px) {

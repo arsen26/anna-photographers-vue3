@@ -52,6 +52,7 @@
       <v-dialog v-model="isDialogOpen" max-width="600">
         <ContactUsDialog
           :title="'Set Fotografik'"
+          :packageValue="null"
           @close="isDialogOpen = false"
         />
       </v-dialog>

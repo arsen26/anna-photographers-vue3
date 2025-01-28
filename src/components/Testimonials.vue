@@ -53,6 +53,7 @@ const testimonials = ref([
 }
 .title-style{
   font-family: "chonburi";
+  color: #ef476f  ;
 }
 .review-style {
   align-items: center;

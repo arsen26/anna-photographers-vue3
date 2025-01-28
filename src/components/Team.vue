@@ -33,7 +33,7 @@
                 :lazy-src="`${item.photo}`"
                 alt="Stafi"
             /></v-avatar>
-            <div class="text-h5 text-uppercase font-weight-black mt-6 mb-2">
+            <div class="text-h5 text-uppercase font-weight-black person-name-style mt-6 mb-2">
               {{ item.name }}
             </div>
             <div class="text--disabled text-uppercase">
@@ -66,9 +66,13 @@ const sendToEmail = (person) => {
 </script>
 
 <style scoped>
+.person-name-style{
+  color: #073b4c;
+}
 .title-style {
   font-family: 'chonburi';
   letter-spacing: 0.2rem !important;
+  color: #ef476f;
 }
 .email-at-teammember {
   cursor: pointer;

@@ -12,7 +12,7 @@
                 Na ndiqni ne rrjetet sociale
               </h2>
 
-              <p  style="color: #f78c6b;  font-family: 'chonburi'">
+              <p  style="color: #ef476f;  font-family: 'chonburi'">
                 Ndiqeni live punen tone, ne rrjetet tona sociale per te marre
                 perditesimet me te fundit rreth nesh.
               </p>
@@ -25,7 +25,7 @@
                   class="d-flex"
                   icon
                   large
-                  :color="'#f78c6b'"
+                  :color="'#ef476f'"
                   :href="socialm.link"
                   target="_blank"
                 >
@@ -89,6 +89,6 @@ const social = ref( [
 .follow-us-on-social-title {
   font-size: 45px;
   font-family: "chonburi";
-  color: #f78c6b;
+  color: #ef476f;
 }
 </style>

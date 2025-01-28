@@ -7,8 +7,6 @@
       <v-row>
         <v-col cols="12" sm="4" align-self="center">
           <h3
-            style="color: #f78c6b"
-            :class="$vuetify.theme.dark ? 'grey--text' : null"
             class="text-h4 text-center font-weight-light mb-xs-4 title-style"
           >
             Bashkëpunëtorët Tanë
@@ -73,6 +71,6 @@ export default {
 <style scoped>
 .title-style{
   font-family: "chonburi";
-
+  color: #ef476f;
 }
 </style>

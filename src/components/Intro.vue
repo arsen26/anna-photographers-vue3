@@ -24,7 +24,7 @@
           <v-row no-gutters>
             <v-col :cols="card.callout ? 9 : 12">
               <div class="pr-2">
-                <div class="text--disabled" v-text="card.subtitle"></div>
+                <div class="text--disabled subtitle-style" v-text="card.subtitle"></div>
                 <h4
                   class="text-uppercase mt-1 mb-4 title-style"
                   style="letter-spacing: 0.15em"
@@ -77,8 +77,12 @@ export default {
 </script>
 
 <style scoped>
+.subtitle-style{
+  color: #ef476f;
+}
 .title-style{
   font-family: "chonburi";
+  color: #ef476f;
   letter-spacing: .2rem !important;
 }
 </style>

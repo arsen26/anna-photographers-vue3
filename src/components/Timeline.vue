@@ -67,6 +67,7 @@ const years = ref([
 .title-style{
   font-family: "chonburi";
   letter-spacing: .5rem !important;
+  color: #ef476f;
 }
 .timeline-title-style{
   font-family: "Jaro";

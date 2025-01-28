@@ -6,14 +6,6 @@
         <v-container>
           <v-row class="py-16">
             <v-col cols="12">
-              <h2 class="text-md-h3 text-center font-weight-black text-capitalize title-style">
-                Kush jemi ne?
-              </h2>
-              <!-- <h3
-                class="text-h4 text-uppercase font-weight-thin text-center my-8"
-              >
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit
-              </h3> -->
             </v-col>
             <v-col cols="12" md="6">
               <p>
@@ -147,5 +139,6 @@ const head = () => {
 .title-style{
   font-family: "chonburi";
   letter-spacing: .2rem !important;
+  color: #ef476f;
 }
 </style>

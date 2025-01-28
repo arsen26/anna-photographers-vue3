@@ -33,8 +33,8 @@
               Rezervoni tani
             </v-btn>
             <span class="mx-2 my-4"></span>
-            <v-btn @click="sendToInstagram" text class="my-3" variant="outlined">
-              <v-icon left large color="#ef476f">mdi-instagram</v-icon>
+            <v-btn @click="sendToInstagram" text class="my-3" color="#fffff" variant="outlined">
+              <v-icon left large color="#fffff">mdi-instagram</v-icon>
               Instagram
             </v-btn>
           </div>

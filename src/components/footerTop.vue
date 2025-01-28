@@ -97,7 +97,7 @@
                     <img :src="socialm.icon" class="tiktok-icon bxl-tiktok" />
                   </template>
                   <template v-else>
-                    <v-icon style="color: ;">{{ socialm.icon }}</v-icon>
+                    <v-icon>{{ socialm.icon }}</v-icon>
                   </template>
                 </v-btn>
               </div>
@@ -199,14 +199,14 @@ export default {
   transition: all 0.3s ease;
 }
 
-.social-media-icon:hover {
+/* .social-media-icon:hover {
   cursor: pointer;
   font-size: 37px;
   color: #ef476f;
   text-shadow: 0 0 5px #ef476f, 0 0 10px #ef476f, 0 0 20px #ef476f;
-}
+} */
 
-@keyframes glow {
+/* @keyframes glow {
   0%,
   100% {
     color: white;
@@ -216,7 +216,7 @@ export default {
     color: #ef476f;
     text-shadow: 0 0 5px #ef476f, 0 0 10px #ef476f, 0 0 20px #ef476f;
   }
-}
+} */
 
 .bxl-instagram {
   animation: glow 2s infinite;
@@ -233,28 +233,28 @@ export default {
 }
 
 .tiktok-icon {
-  width: 26px;
-  height: 26px;
-  display: block;
-  filter: drop-shadow(0 0 2px #ef476f) drop-shadow(0 0 4px #ef476f); /* Rrit efektin e neoni */
+  width: 27px;
+  height: 27px;
+  /* display: block;
+  filter: drop-shadow(0 0 2px #ef476f) drop-shadow(0 0 4px #ef476f); 
   animation: glow 2s infinite !important;
-  animation-delay: 0.5s !important;
+  animation-delay: 0.5s !important; */
 }
-.tiktok-icon:hover {
+/* .tiktok-icon:hover {
   width: 37px;
   height: 37px;
   display: block;
-  filter: drop-shadow(0 0 2px #ef476f) drop-shadow(0 0 4px #ef476f); /* Rrit efektin e neoni */
+  filter: drop-shadow(0 0 2px #ef476f) drop-shadow(0 0 4px #ef476f); 
   animation: glow 2s infinite !important;
   animation-delay: 0.5s !important;
-}
-@keyframes glow {
+} */
+/* @keyframes glow {
   0%,
   100% {
-    filter: drop-shadow(0 0 0px #ef476f) drop-shadow(0 0 0px #ef476f); /* Ndriçimi fillestar dhe përfundimtar */
+    filter: drop-shadow(0 0 0px #ef476f) drop-shadow(0 0 0px #ef476f); 
   }
   50% {
-    filter: drop-shadow(0 0 2px #ef476f) drop-shadow(0 0 4px #ef476f); /* Ndriçimi maksimal */
+    filter: drop-shadow(0 0 2px #ef476f) drop-shadow(0 0 4px #ef476f); 
   }
-}
+} */
 </style>

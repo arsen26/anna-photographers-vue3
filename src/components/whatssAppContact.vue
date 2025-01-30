@@ -46,20 +46,6 @@
             rows="1" label="" variant="outlined"
             @click:append-inner="sendMessage"
             ></v-textarea>
-
-
-          <!-- <textarea
-            v-model="chatInput"
-            id="chat-input"
-            placeholder="Write a response"
-            maxlength="120"
-            rows="1"
-          ></textarea> -->
-          <!-- <a href="javascript:void(0);" @click="sendMessage" id="send-it">
-            <svg viewBox="0 0 448 448">
-              <path d="M.213 32L0 181.333 320 224 0 266.667.213 416 448 224z" />
-            </svg>
-          </a> -->
         </div>
       </div>
       <div id="get-number">{{ phoneNumber }}</div>

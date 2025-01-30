@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import siteHeader from '@/components/siteHeader.vue';
+// import siteHeader from '@/components/siteHeader.vue';
 import siteFooter from '@/components/siteFooter.vue';
 import hero from '@/components/Hero.vue';
 import intro from '@/components/Intro.vue';

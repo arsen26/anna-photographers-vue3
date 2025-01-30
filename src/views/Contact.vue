@@ -62,26 +62,6 @@
                     <v-list-item-subtitle>9am to 7pm</v-list-item-subtitle>
                   </v-list-item-content>
                 </v-list-item>
-
-                <!-- <v-list-item>
-                  <v-list-item-icon>
-                    <v-icon color="primary"> mdi-clock </v-icon>
-                  </v-list-item-icon>
-                  <v-list-item-content>
-                    <v-list-item-title>SATURDAY</v-list-item-title>
-                    <v-list-item-subtitle>9am to 2pm</v-list-item-subtitle>
-                  </v-list-item-content>
-                </v-list-item>
-
-                <v-list-item>
-                  <v-list-item-icon>
-                    <v-icon color="primary"> mdi-clock </v-icon>
-                  </v-list-item-icon>
-                  <v-list-item-content>
-                    <v-list-item-title>SUNDAY</v-list-item-title>
-                    <v-list-item-subtitle>cLOSED</v-list-item-subtitle>
-                  </v-list-item-content>
-                </v-list-item> -->
               </v-list>
             </v-col>
             <v-col md="7" cols="12">

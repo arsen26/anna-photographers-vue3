@@ -132,25 +132,25 @@ export default {
           platform: 'Facebook',
           link: 'https://www.facebook.com/',
           icon: 'mdi-facebook',
-          className: 'bxl-facebook', // Klasë për Facebook
+          className: 'bxl-facebook',
         },
         {
           platform: 'TikTok',
-          link: 'https://www.tiktok.com/@annaphotographers', // Korrigjim i lidhjes për TikTok
-          icon: tiktokIcon, // Ikona e TikTok
-          className: 'bxl-tiktok', // Klasë për TikTok (ndryshimi nga bxl-twitter)
+          link: 'https://www.tiktok.com/@annaphotographers',
+          icon: tiktokIcon,
+          className: 'bxl-tiktok',
         },
         {
           platform: 'Instagram',
           link: 'https://www.instagram.com/annaphotographers/',
           icon: 'mdi-instagram',
-          className: 'bxl-instagram', // Klasë për Instagram
+          className: 'bxl-instagram',
         },
         {
           platform: 'Youtube',
           link: 'https://www.youtube.com/@annaphotographers',
           icon: 'mdi-youtube',
-          className: 'bxl-youtube', // Klasë për Youtube
+          className: 'bxl-youtube',
         },
       ],
     }
@@ -199,62 +199,9 @@ export default {
   transition: all 0.3s ease;
 }
 
-/* .social-media-icon:hover {
-  cursor: pointer;
-  font-size: 37px;
-  color: #ef476f;
-  text-shadow: 0 0 5px #ef476f, 0 0 10px #ef476f, 0 0 20px #ef476f;
-} */
-
-/* @keyframes glow {
-  0%,
-  100% {
-    color: white;
-    text-shadow: none;
-  }
-  50% {
-    color: #ef476f;
-    text-shadow: 0 0 5px #ef476f, 0 0 10px #ef476f, 0 0 20px #ef476f;
-  }
-} */
-
-.bxl-instagram {
-  animation: glow 2s infinite;
-  animation-delay: 1s;
-}
-
-.bxl-facebook {
-  animation: glow 2s infinite;
-  animation-delay: 0s;
-}
-.bxl-youtube {
-  animation: glow 2s infinite;
-  animation-delay: 1.5s;
-}
-
 .tiktok-icon {
   width: 27px;
   height: 27px;
-  /* display: block;
-  filter: drop-shadow(0 0 2px #ef476f) drop-shadow(0 0 4px #ef476f); 
-  animation: glow 2s infinite !important;
-  animation-delay: 0.5s !important; */
 }
-/* .tiktok-icon:hover {
-  width: 37px;
-  height: 37px;
-  display: block;
-  filter: drop-shadow(0 0 2px #ef476f) drop-shadow(0 0 4px #ef476f); 
-  animation: glow 2s infinite !important;
-  animation-delay: 0.5s !important;
-} */
-/* @keyframes glow {
-  0%,
-  100% {
-    filter: drop-shadow(0 0 0px #ef476f) drop-shadow(0 0 0px #ef476f); 
-  }
-  50% {
-    filter: drop-shadow(0 0 2px #ef476f) drop-shadow(0 0 4px #ef476f); 
-  }
-} */
+
 </style>

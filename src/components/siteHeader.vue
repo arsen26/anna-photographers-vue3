@@ -94,6 +94,7 @@ const navigateTo = (path) => {
   }
 
   .submenubtn {
+    cursor: pointer !important;
     display: inline-flex;
   }
 }

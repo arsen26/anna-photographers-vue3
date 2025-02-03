@@ -66,8 +66,8 @@ const sendToEmail = (person) => {
 </script>
 
 <style scoped>
-.person-name-style{
-  color: #073b4c;
+.person-name-style {
+  color: #192744;
 }
 .title-style {
   font-family: 'chonburi';

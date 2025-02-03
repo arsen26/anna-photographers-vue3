@@ -5,20 +5,22 @@
       <router-view></router-view>
     </v-main>
     <whatssAppContact />
+    <siteFooter />
   </v-app>
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
-import { useRouter } from 'vue-router';
-import whatssAppContact from './components/whatssAppContact.vue';
-import siteHeader from './components/siteHeader.vue';
+import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import siteFooter from './components/siteFooter.vue'
+import whatssAppContact from './components/whatssAppContact.vue'
+import siteHeader from './components/siteHeader.vue'
 
-const router = useRouter();
+const router = useRouter()
 
 onMounted(() => {
-  router.push('/HomeView');
-});
+  router.push('/HomeView')
+})
 </script>
 
 <style scoped>

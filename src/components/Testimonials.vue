@@ -43,7 +43,6 @@ const testimonials = ref([
 </script>
 
 <style scoped>
-
 .test-test {
   background-color: white;
   margin-top: -46px;
@@ -51,9 +50,9 @@ const testimonials = ref([
   position: relative; /* Mund të përdorësh absolute ose fixed në varësi të nevojës */
   z-index: 9999; /* Sa më i lartë numri, aq më sipër do të jetë elementi */
 }
-.title-style{
-  font-family: "chonburi";
-  color: #ef476f  ;
+.title-style {
+  font-family: 'chonburi';
+  color: #ef476f;
 }
 .review-style {
   align-items: center;

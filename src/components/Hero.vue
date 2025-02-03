@@ -18,17 +18,20 @@
         class="gradient-fill"
         width="100%"
       >
-      <div
-    class="carousel-background"
-    :style="{ backgroundImage: `url(${carousel.src})` }"
-  ></div>
+        <div class="carousel-background" :style="{ backgroundImage: `url(${carousel.src})` }"></div>
         <v-container fluid>
           <div class="carousel-image" style="max-width: 600px; z-index: 2">
-            <div class="text-h2 mb-3 text-sm-h3 text-h5 font-weight-black white--text carousel-title-style">
+            <div
+              class="text-h2 mb-3 text-sm-h3 text-h5 font-weight-black white--text carousel-title-style"
+            >
               {{ carousel.heading.toUpperCase() }}
             </div>
             <p class="mb-5 white--text">{{ carousel.subHeading }}</p>
-            <v-btn @click="sendToPhoneNumber" style="background-color: #ef476f; color: white" class="my-3">
+            <v-btn
+              @click="sendToPhoneNumber"
+              style="background-color: #ef476f; color: white"
+              class="my-3"
+            >
               <v-icon left large color="white">mdi-phone</v-icon>
               Rezervoni tani
             </v-btn>
@@ -45,21 +48,21 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, watchEffect } from "vue";
+import { ref, onMounted, onUnmounted, watchEffect } from 'vue'
 import background1 from '@/assets/background1.jpg'
-const isSmallScreen = ref(false);
+const isSmallScreen = ref(false)
 
 const checkScreenWidth = () => {
-  isSmallScreen.value = window.innerWidth <= 600; // Kufiri i gjerësisë për ekran të vogël (mund të ndryshosh këtë vlerë)
-};
+  isSmallScreen.value = window.innerWidth <= 600 // Kufiri i gjerësisë për ekran të vogël (mund të ndryshosh këtë vlerë)
+}
 onMounted(() => {
-  checkScreenWidth();
-  window.addEventListener("resize", checkScreenWidth);
-});
+  checkScreenWidth()
+  window.addEventListener('resize', checkScreenWidth)
+})
 
 onUnmounted(() => {
-  window.removeEventListener("resize", checkScreenWidth);
-});
+  window.removeEventListener('resize', checkScreenWidth)
+})
 const carouselsData = ref([
   {
     src: background1,
@@ -87,18 +90,17 @@ const carouselsData = ref([
   },
 ])
 const sendToPhoneNumber = () => {
-  window.location.href = 'tel:+355696754600';
+  window.location.href = 'tel:+355696754600'
 }
 
 const sendToInstagram = () => {
-  window.open('https://www.instagram.com/annaphotographers', '_blank');
+  window.open('https://www.instagram.com/annaphotographers', '_blank')
 }
-
 </script>
 
 <style scoped>
-.carousel-title-style{
-  font-family: "chonburi";
+.carousel-title-style {
+  font-family: 'chonburi';
   /* letter-spacing: .2rem !important; */
 }
 

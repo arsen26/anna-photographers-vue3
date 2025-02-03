@@ -1,198 +1,194 @@
-  <template>
-    <v-card class="card-form-style">
-      <v-btn
-        icon
-        large
-        variant="plain"
-        @click="closeCard"
-        class="close-btn"
-        style="position: absolute; top: 10px; right: 10px; z-index: 1"
-      >
-        <v-icon>mdi-close</v-icon>
-      </v-btn>
-      <v-card-title class="row-container-for-information-title-style">
-        Rezervim per {{ title }}
-      </v-card-title>
-      <v-card-text>
-        Plotesoni te dhenat e meposhtme per te kontaktuar me stafin e Anna Photographers.
-      </v-card-text>
+<template>
+  <v-card class="card-form-style">
+    <v-btn
+      icon
+      large
+      variant="plain"
+      @click="closeCard"
+      class="close-btn"
+      style="position: absolute; top: 10px; right: 10px; z-index: 1"
+    >
+      <v-icon>mdi-close</v-icon>
+    </v-btn>
+    <v-card-title class="row-container-for-information-title-style">
+      Rezervim per {{ title }}
+    </v-card-title>
+    <v-card-text>
+      Plotesoni te dhenat e meposhtme per te kontaktuar me stafin e Anna Photographers.
+    </v-card-text>
 
-      <v-row class="row-container-for-information">
-        <v-col>
-          <v-text-field
-            color="#073b4c"
-            v-model="nameValue"
-            label="Emer"
-            variant="outlined"
-          ></v-text-field>
-        </v-col>
-        <v-col>
-          <v-text-field
-            color="#073b4c"
-            v-model="surnameValue"
-            label="Mbiemer"
-            variant="outlined"
-          ></v-text-field>
-        </v-col>
-      </v-row>
+    <v-row class="row-container-for-information">
+      <v-col>
+        <v-text-field
+          color="#192744"
+          v-model="nameValue"
+          label="Emer"
+          variant="outlined"
+        ></v-text-field>
+      </v-col>
+      <v-col>
+        <v-text-field
+          color="#192744"
+          v-model="surnameValue"
+          label="Mbiemer"
+          variant="outlined"
+        ></v-text-field>
+      </v-col>
+    </v-row>
 
-      <v-row class="row-container-for-information">
-        <v-col>
-          <v-text-field
-            color="#073b4c"
-            hide-spin-buttons="true"
-            type="number"
-            v-model="numberValue"
-            label="Nr Tel"
-            variant="outlined"
-          ></v-text-field>
-        </v-col>
-        <v-col>
-          <!-- <v-text-field
+    <v-row class="row-container-for-information">
+      <v-col>
+        <v-text-field
+          color="#192744"
+          hide-spin-buttons="true"
+          type="number"
+          v-model="numberValue"
+          label="Nr Tel"
+          variant="outlined"
+        ></v-text-field>
+      </v-col>
+      <v-col>
+        <!-- <v-text-field
             color="primary"
             v-model="packageValue"
             :label="packageLabel"
             variant="outlined"
           ></v-text-field> -->
-          <v-text-field
-  color="#073b4c"
-  v-model="packageValueModel"
-  :label="packageValue ? '' : packageLabel"
-  variant="outlined"
-/>
-        </v-col>
-      </v-row>
-
-      <v-row class="row-container-for-information-text-area">
-        <v-textarea
-          color="#073b4c"
-          v-model="moreMessage"
-          label="Me teper..."
+        <v-text-field
+          color="#192744"
+          v-model="packageValueModel"
+          :label="packageValue ? '' : packageLabel"
           variant="outlined"
+        />
+      </v-col>
+    </v-row>
 
-        >{{ packageType }} </v-textarea>
-      </v-row>
+    <v-row class="row-container-for-information-text-area">
+      <v-textarea color="#192744" v-model="moreMessage" label="Me teper..." variant="outlined"
+        >{{ packageType }}
+      </v-textarea>
+    </v-row>
 
-      <v-row class="justify-center calendar-style">
-        <v-date-picker
-          @update:model-value="formatDate"
-          v-model="dateToSend"
-          color="#073b4c"
-          :title="''"
-        ></v-date-picker>
-      </v-row>
+    <v-row class="justify-center calendar-style">
+      <v-date-picker
+        @update:model-value="formatDate"
+        v-model="dateToSend"
+        color="#192744"
+        :title="''"
+      ></v-date-picker>
+    </v-row>
 
-      <v-card-actions class="reserve-button-style">
-        <v-spacer></v-spacer>
+    <v-card-actions class="reserve-button-style">
+      <v-spacer></v-spacer>
 
-        <v-btn
-          prepend-icon="mdi-check-circle"
-          variant="outlined"
-          color="#073b4c"
-          @click="sendMessageToWhatssApp"
-          >Rezervoni</v-btn
-        >
-      </v-card-actions>
-    </v-card>
-  </template>
-  <script setup>
-  import { ref, onMounted } from 'vue'
-  const props = defineProps({
-    title: {
-      type: String,
-      required: true,
-    },
-    packageValue: {
-      type: String,
-      required: true,
-    },
-    packageType: {
-      type: String,
-      required: true,
-    },
-    packageLabel: {
-      type: String,
-      default: 'Paketa që interesoheni',
-    },
-  })
-  const packageValueModel = ref(props.packageValue || '')
+      <v-btn
+        prepend-icon="mdi-check-circle"
+        variant="outlined"
+        color="#192744"
+        @click="sendMessageToWhatssApp"
+        >Rezervoni</v-btn
+      >
+    </v-card-actions>
+  </v-card>
+</template>
+<script setup>
+import { ref, onMounted } from 'vue'
+const props = defineProps({
+  title: {
+    type: String,
+    required: true,
+  },
+  packageValue: {
+    type: String,
+    required: true,
+  },
+  packageType: {
+    type: String,
+    required: true,
+  },
+  packageLabel: {
+    type: String,
+    default: 'Paketa që interesoheni',
+  },
+})
+const packageValueModel = ref(props.packageValue || '')
 
-  const emit = defineEmits(['close'])
+const emit = defineEmits(['close'])
 
-  const nameValue = ref('')
-  const surnameValue = ref('')
-  const numberValue = ref('')
-  const sendToWaDate = ref(null)
-  const moreMessage = ref('')
-  moreMessage.value = props.packageType
-  const dateToSend = ref(null)
-  const formatDate = (date) => {
-    if (!date) return ''
-    const d = new Date(date)
-    if (isNaN(d.getTime())) return ''
-    const day = String(d.getDate()).padStart(2, '0')
-    const month = String(d.getMonth() + 1).padStart(2, '0')
+const nameValue = ref('')
+const surnameValue = ref('')
+const numberValue = ref('')
+const sendToWaDate = ref(null)
+const moreMessage = ref('')
+moreMessage.value = props.packageType
+const dateToSend = ref(null)
+const formatDate = (date) => {
+  if (!date) return ''
+  const d = new Date(date)
+  if (isNaN(d.getTime())) return ''
+  const day = String(d.getDate()).padStart(2, '0')
+  const month = String(d.getMonth() + 1).padStart(2, '0')
 
-    const year = d.getFullYear()
-    // console.log(year)
+  const year = d.getFullYear()
+  // console.log(year)
 
-    dateToSend.value = `${day}/${month}/${year}`
-    sendToWaDate.value = dateToSend.value
-    // console.log(dateToSend.value)
-  }
-  const closeCard = () => {
-    emit('close')
-  }
+  dateToSend.value = `${day}/${month}/${year}`
+  sendToWaDate.value = dateToSend.value
+  // console.log(dateToSend.value)
+}
+const closeCard = () => {
+  emit('close')
+}
 
-  const sendMessageToWhatssApp = () => {
-    if (!nameValue.value || !surnameValue.value || !numberValue.value || !packageValueModel.value) {
-      alert('Ju lutem plotësoni të gjitha fushat!');
-      return;
-    }
-
-    const message = `Pershendetje! Une jam ${nameValue.value} ${surnameValue.value}, dhe isha i/e interesuar per te bere
-    ${packageValueModel.value}, ne date ${sendToWaDate.value}. Per te bere rezervimin ky eshte numri im i telefonit ${numberValue.value}. SHENIM: ${moreMessage.value}™`;
-    const phoneNumber = '+355697496384';
-
-    if (
-      (numberValue.value.includes('+') && numberValue.value.length > 12) ||
-      (!numberValue.value.includes('+') && numberValue.value.length > 10)
-    ) {
-      alert('Numri që keni vendosur nuk është i saktë');
-    } else {
-      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-      window.open(url, '_blank');
-    }
-  };
-  </script>
-  <style scoped>
-  .calendar-style{
-    padding-left: 31px !important;
-    padding-right: 30px !important;
-  }
-  .card-form-style {
-    max-width: 500px;
-    max-height: 900px;
-    /* overflow-y: hidden !important; */
-  }
-  .row-container-for-information-title-style {
-    padding-left: 23px;
-    margin-bottom: -10px;
-    font-weight: 600;
-    font-size: large;
-  }
-  .row-container-for-information {
-    padding-left: 20px;
-    margin-bottom: -20px;
-    padding-right: 20px;
-  }
-  .row-container-for-information-text-area {
-    padding-left: 32px;
-    padding-right: 32px;
-    max-height: 170px;
+const sendMessageToWhatssApp = () => {
+  if (!nameValue.value || !surnameValue.value || !numberValue.value || !packageValueModel.value) {
+    alert('Ju lutem plotësoni të gjitha fushat!')
+    return
   }
 
-  .reserve-button-style {
-    padding-right: 19px;
+  const message = `Pershendetje! Une jam ${nameValue.value} ${surnameValue.value}, dhe isha i/e interesuar per te bere
+    ${packageValueModel.value}, ne date ${sendToWaDate.value}. Per te bere rezervimin ky eshte numri im i telefonit ${numberValue.value}. SHENIM: ${moreMessage.value}™`
+  const phoneNumber = '+355697496384'
+
+  if (
+    (numberValue.value.includes('+') && numberValue.value.length > 12) ||
+    (!numberValue.value.includes('+') && numberValue.value.length > 10)
+  ) {
+    alert('Numri që keni vendosur nuk është i saktë')
+  } else {
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+    window.open(url, '_blank')
   }
-  </style>
+}
+</script>
+<style scoped>
+.calendar-style {
+  padding-left: 31px !important;
+  padding-right: 30px !important;
+}
+.card-form-style {
+  max-width: 500px;
+  max-height: 900px;
+  /* overflow-y: hidden !important; */
+}
+.row-container-for-information-title-style {
+  padding-left: 23px;
+  margin-bottom: -10px;
+  font-weight: 600;
+  font-size: large;
+}
+.row-container-for-information {
+  padding-left: 20px;
+  margin-bottom: -20px;
+  padding-right: 20px;
+}
+.row-container-for-information-text-area {
+  padding-left: 32px;
+  padding-right: 32px;
+  max-height: 170px;
+}
+
+.reserve-button-style {
+  padding-right: 19px;
+}
+</style>

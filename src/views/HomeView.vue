@@ -9,7 +9,7 @@
         <Features />
         <Brands />
         <footerTop/>
-        <siteFooter />
+        <!-- <siteFooter /> -->
       </v-col>
     </v-row>
   </section>

@@ -5,8 +5,7 @@
         <AboutUsHero :hero-alt="heroAlt" />
         <v-container>
           <v-row class="py-16">
-            <v-col cols="12">
-            </v-col>
+            <v-col cols="12"> </v-col>
             <v-col cols="12" md="6">
               <p>
                 Anna Photographers është një biznes i themeluar me pasion dhe vizion. Eksperienca e
@@ -73,7 +72,7 @@
 
 <script setup>
 import { ref, defineProps } from 'vue'
-import AboutUsHero from '@/components/AboutUsHero.vue';
+import AboutUsHero from '@/components/AboutUsHero.vue'
 import Team from '@/components/Team.vue'
 import Timeline from '@/components/Timeline.vue'
 import teamWork from '@/assets/teamwork.jpg'
@@ -83,7 +82,7 @@ import Vovi from '@/assets/vovi.webp'
 import WorkingPerson from '@/assets/workingPerson.jpg'
 const heroAlt = ref([
   {
-    src:teamWork,
+    src: teamWork,
     heading: ' Rreth nesh ',
   },
 ])
@@ -110,7 +109,7 @@ const ourTeam = ref([
     photo: Vovi,
   },
 ])
-console.log(ourTeam.value,'=>> our team')
+console.log(ourTeam.value, '=>> our team')
 const ourVision = ref([
   {
     title: 'Vizioni yne',
@@ -136,9 +135,9 @@ const head = () => {
 </script>
 
 <style scoped>
-.title-style{
-  font-family: "chonburi";
-  letter-spacing: .2rem !important;
+.title-style {
+  font-family: 'chonburi';
+  letter-spacing: 0.2rem !important;
   color: #ef476f;
 }
 </style>

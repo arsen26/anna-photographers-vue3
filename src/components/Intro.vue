@@ -10,12 +10,11 @@
           3 Arsye pse duhet te beni sa me shum fotografi
         </h2>
         <p class="title font-weight-thin">
-          Bërja e sa më shumë fotografi sjell një përvojë të pasur dhe
-          emocionale. Përmes linzave të aparatit, hapesh ndaj një bote të re,
-          grumbullon kujtime të paharrueshme, dhe shpreh shpirtin dhe njohuritë
-          në mënyrë më të thellë. Fotografia është një mjet i shkëlqyeshëm për
-          të shprehur krijimtarinë tuaj dhe për të ndarë me të tjerët bukuritë
-          që zbuloni në udhën tuaj të përditshme.
+          Bërja e sa më shumë fotografi sjell një përvojë të pasur dhe emocionale. Përmes linzave të
+          aparatit, hapesh ndaj një bote të re, grumbullon kujtime të paharrueshme, dhe shpreh
+          shpirtin dhe njohuritë në mënyrë më të thellë. Fotografia është një mjet i shkëlqyeshëm
+          për të shprehur krijimtarinë tuaj dhe për të ndarë me të tjerët bukuritë që zbuloni në
+          udhën tuaj të përditshme.
         </p>
       </v-responsive>
 
@@ -34,11 +33,9 @@
               </div>
             </v-col>
             <v-col v-if="card.callout" cols="2">
-              <span
-                class="text-h3 font-weight-bold"
-                style="opacity: 0.2; color: #ef476f"
-                >{{ card.callout }}</span
-              >
+              <span class="text-h3 font-weight-bold" style="opacity: 0.2; color: #ef476f">{{
+                card.callout
+              }}</span>
             </v-col>
           </v-row>
         </v-col>
@@ -77,12 +74,12 @@ export default {
 </script>
 
 <style scoped>
-.subtitle-style{
+.subtitle-style {
   color: #ef476f;
 }
-.title-style{
-  font-family: "chonburi";
+.title-style {
+  font-family: 'chonburi';
   color: #ef476f;
-  letter-spacing: .2rem !important;
+  letter-spacing: 0.2rem !important;
 }
 </style>

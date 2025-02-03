@@ -3,12 +3,7 @@
     <v-text-field v-model="name" label="Name" dense outlined></v-text-field>
     <v-text-field v-model="email" label="Email" dense outlined></v-text-field>
     <v-text-field v-model="tel" label="Nr Tel" dense outlined></v-text-field>
-    <v-text-field
-      v-model="subject"
-      label="Subject"
-      dense
-      outlined
-    ></v-text-field>
+    <v-text-field v-model="subject" label="Subject" dense outlined></v-text-field>
     <v-textarea
       v-model="message"
       dense
@@ -18,7 +13,7 @@
       rows="8"
       row-height="20"
     ></v-textarea>
-    <v-btn outlined block color="#073b4c" @click="sendEmail">SEND EMAIL</v-btn>
+    <v-btn outlined block color="#192744" @click="sendEmail">SEND EMAIL</v-btn>
   </v-form>
 </template>
 
@@ -48,7 +43,7 @@ export default {
             telephone: this.tel,
             message: this.message,
           },
-          '2ydcucD9DD2LytKdw'
+          '2ydcucD9DD2LytKdw',
         )
 
         alert('EMAIL SENT SUCCESSFULLY')

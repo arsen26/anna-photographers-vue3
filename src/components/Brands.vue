@@ -1,14 +1,9 @@
 <template>
-  <section
-    id="sponsors"
-    :class="$vuetify.theme.dark ? 'grey darken-4' : 'grey lighten-4'"
-  >
+  <section id="sponsors" :class="$vuetify.theme.dark ? 'grey darken-4' : 'grey lighten-4'">
     <v-container>
       <v-row>
         <v-col cols="12" sm="4" align-self="center">
-          <h3
-            class="text-h4 text-center font-weight-light mb-xs-4 title-style"
-          >
+          <h3 class="text-h4 text-center font-weight-light mb-xs-4 title-style">
             Bashkëpunëtorët Tanë
           </h3>
         </v-col>
@@ -43,7 +38,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 export default {
   setup() {
@@ -59,18 +54,18 @@ export default {
       'logo-23.svg',
       'logo-16.svg',
       'logo-8.svg',
-    ]);
+    ])
 
     return {
       brandsLogo,
-    };
+    }
   },
-};
+}
 </script>
 
 <style scoped>
-.title-style{
-  font-family: "chonburi";
+.title-style {
+  font-family: 'chonburi';
   color: #ef476f;
 }
 </style>

@@ -80,7 +80,7 @@
               </v-list>
             </v-row>
             <v-row class="justify-center">
-              <v-btn @click="openDialog(plan)" color="#073b4c" rounded class="reservation-button">
+              <v-btn @click="openDialog(plan)" color="#192744" rounded class="reservation-button">
                 Rezervo
               </v-btn>
             </v-row>

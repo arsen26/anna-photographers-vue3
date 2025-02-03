@@ -2,23 +2,20 @@
   <section id="timeline" class="py-16">
     <v-container>
       <h2 class="text-h3 text-center font-weight-black mb-8 title-style">Rrugetimi yne</h2>
-        <v-timeline>
-          <v-timeline-item v-for="(year, i) in years"  :dot-color="year.color" small>
-            <template v-slot:opposite>
-              <span
-                :class="`headline font-weight-bold text-${year.color}`"
-                v-text="year.year"
-              ></span>
-            </template>
-            <div class="py-4">
-              <h2 :class="`headline timeline-title-style font-weight-light mb-4 text-${year.color}`">
-                {{ year.title }}
-              </h2>
-              <div></div>
-              {{ year.text }}
-            </div>
-          </v-timeline-item>
-        </v-timeline>
+      <v-timeline>
+        <v-timeline-item v-for="(year, i) in years" :dot-color="year.color" small>
+          <template v-slot:opposite>
+            <span :class="`headline font-weight-bold text-${year.color}`" v-text="year.year"></span>
+          </template>
+          <div class="py-4">
+            <h2 :class="`headline timeline-title-style font-weight-light mb-4 text-${year.color}`">
+              {{ year.title }}
+            </h2>
+            <div></div>
+            {{ year.text }}
+          </div>
+        </v-timeline-item>
+      </v-timeline>
     </v-container>
   </section>
 </template>
@@ -64,13 +61,13 @@ const years = ref([
 </script>
 
 <style scoped>
-.title-style{
-  font-family: "chonburi";
-  letter-spacing: .5rem !important;
+.title-style {
+  font-family: 'chonburi';
+  letter-spacing: 0.5rem !important;
   color: #ef476f;
 }
-.timeline-title-style{
-  font-family: "Jaro";
-  letter-spacing: .1rem !important;
+.timeline-title-style {
+  font-family: 'Jaro';
+  letter-spacing: 0.1rem !important;
 }
 </style>

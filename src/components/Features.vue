@@ -10,13 +10,7 @@
         </v-col>
       </v-row>
       <v-row style="color: white">
-        <v-col
-          v-for="(card, index) in cards"
-          :key="index"
-          cols="12"
-          sm="4"
-          class="text-center"
-        >
+        <v-col v-for="(card, index) in cards" :key="index" cols="12" sm="4" class="text-center">
           <v-avatar
             size="80"
             class="display-1 white font-weight-bold number-style mb-5"
@@ -25,10 +19,7 @@
             {{ card.callout }}
           </v-avatar>
 
-          <div
-            class="title text-uppercase mt-1 mb-4 title-style"
-            v-text="card.title"
-          ></div>
+          <div class="title text-uppercase mt-1 mb-4 title-style" v-text="card.title"></div>
 
           <p v-text="card.text"></p>
         </v-col>
@@ -88,14 +79,11 @@ const cards = ref([
     callout: '3',
   },
 ])
-
-
 </script>
 
 <style scoped>
-.title-style{
-  font-family: "chonburi";
-
+.title-style {
+  font-family: 'chonburi';
 }
 @media (max-width: 900px) {
   .reserve-now-button-style {
@@ -113,6 +101,6 @@ const cards = ref([
   color: #ef476f;
 }
 .section-container-style {
-  background-color: #073b4c;
+  background-color: #192744;
 }
 </style>

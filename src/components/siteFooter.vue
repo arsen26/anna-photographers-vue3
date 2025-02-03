@@ -63,7 +63,7 @@
     </v-col>
   </v-row>
   <v-row class="justify-center align-center bottom-footer-style">
-    <h5>© Arsen Cenollari - {{ year }}</h5>
+    <h5 class="linkedin-row" @click="sendToLinkedin">© Arsen Cenollari - {{ year }}</h5>
   </v-row>
 </template>
 
@@ -145,9 +145,16 @@ const sendToLocation = () => {
 
   window.open(url, '_blank')
 }
+const sendToLinkedin = () => {
+  const url = 'https://www.linkedin.com/in/arsen-cenollari-88a486284/?originalSubdomain=al'
+  window.open(url, '_blank')
+}
 </script>
 
 <style scoped>
+.linkedin-row {
+  cursor: pointer !important;
+}
 .list-container {
   justify-items: center !important;
   overflow-y: hidden !important;

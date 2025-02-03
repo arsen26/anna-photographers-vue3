@@ -9,12 +9,14 @@
               <div class="text-h6 font-weight-bold mb-5 title-style">Our Office</div>
               <v-list two-line class="transparent">
                 <v-list-item>
-                  <v-list-item-icon>
-                    <v-icon color="primary"> mdi-map-marker </v-icon>
-                  </v-list-item-icon>
-
                   <v-list-item-content>
-                    <v-list-item-title>ADRESA</v-list-item-title>
+                    <v-list-item-title>
+                      <v-list-item-icon>
+                        <v-icon class="icon-contact-style" color="#192744">
+                          mdi-map-marker
+                        </v-icon> </v-list-item-icon
+                      >ADRESA</v-list-item-title
+                    >
                     <v-list-item-subtitle
                       >Misto Mame, Rruga Thoma Koxhaj, Kashar 1001</v-list-item-subtitle
                     >
@@ -22,43 +24,41 @@
                 </v-list-item>
 
                 <v-list-item>
-                  <v-list-item-icon>
-                    <v-icon color="primary"> mdi-email </v-icon>
-                  </v-list-item-icon>
-
                   <v-list-item-content>
-                    <v-list-item-title>EMAIL</v-list-item-title>
-                    <v-list-item-subtitle
-                      >anxhir@gmail.com</v-list-item-subtitle
+                    <v-list-item-title>
+                      <v-list-item-icon>
+                        <v-icon class="icon-contact-style" color="#192744">
+                          mdi-email
+                        </v-icon> </v-list-item-icon
+                      >EMAIL</v-list-item-title
                     >
-                    <v-list-item-subtitle
-                      >annaphotographers@yahoo.com</v-list-item-subtitle
-                    >
+                    <v-list-item-subtitle>anxhir@gmail.com</v-list-item-subtitle>
+                    <v-list-item-subtitle>annaphotographers@yahoo.com</v-list-item-subtitle>
                   </v-list-item-content>
                 </v-list-item>
 
                 <v-list-item>
-                  <v-list-item-icon>
-                    <v-icon color="primary"> mdi-phone </v-icon>
-                  </v-list-item-icon>
-
                   <v-list-item-content>
-                    <v-list-item-title>PHONE</v-list-item-title>
+                    <v-list-item-title>
+                      <v-list-item-icon>
+                        <v-icon class="icon-contact-style" color="#192744">
+                          mdi-phone
+                        </v-icon> </v-list-item-icon
+                      >PHONE</v-list-item-title
+                    >
                     <v-list-item-subtitle>+355 69 749 6384</v-list-item-subtitle>
-                    <!-- <v-list-item-subtitle>(650) 555-1234</v-list-item-subtitle> -->
                   </v-list-item-content>
                 </v-list-item>
               </v-list>
-              <div class="text-h6 font-weight-bold mt-12 mb-5 title-style">
-                Business Hours
-              </div>
+              <div class="text-h6 font-weight-bold mt-12 mb-5 title-style">Business Hours</div>
               <v-list two-line class="transparent">
                 <v-list-item>
-                  <v-list-item-icon>
-                    <v-icon color="primary"> mdi-clock </v-icon>
-                  </v-list-item-icon>
+                  <v-list-item-icon> </v-list-item-icon>
                   <v-list-item-content>
-                    <v-list-item-title>MONDAY to FRIDAY </v-list-item-title>
+                    <v-list-item-title class="title-icon-style">
+                      <v-icon class="icon-contact-style" color="#192744"> mdi-clock </v-icon>MONDAY
+                      to FRIDAY
+                    </v-list-item-title>
                     <v-list-item-subtitle>9am to 7pm</v-list-item-subtitle>
                   </v-list-item-content>
                 </v-list-item>
@@ -88,37 +88,40 @@
 
 <script setup>
 import footerContactForm from '@/components/footerContactForm.vue'
-import HeroAlt from '@/components/AboutUsHero.vue';
-import { ref } from 'vue';
+import HeroAlt from '@/components/AboutUsHero.vue'
+import { ref } from 'vue'
 import ContactImg from '@/assets/contact.jpg'
-const heroAlt= ref([
-        {
-          src: ContactImg,
-          heading: ' Contact Us ',
-        },
-      ])
+const heroAlt = ref([
+  {
+    src: ContactImg,
+    heading: ' Contact Us ',
+  },
+])
 
-
- const head = () => {
-    return {
-      title: 'Contact Us',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content:
-            'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm shift client partner network product seilans solve management influencer analytics leverage virality. incubator seed round massmarket. buyer agile development growth hacking business-to-consumer ecosystem',
-        },
-      ],
-    }
+const head = () => {
+  return {
+    title: 'Contact Us',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Infographic hypotheses influencer user experience Long madel ture gen-z paradigm shift client partner network product seilans solve management influencer analytics leverage virality. incubator seed round massmarket. buyer agile development growth hacking business-to-consumer ecosystem',
+      },
+    ],
   }
-
+}
 </script>
 
 <style scoped>
-.title-style{
-  font-family: "chonburi";
-
+.icon-contact-style {
+  margin-right: 7px;
+}
+.title-icon-style {
+  align-items: center !important;
+}
+.title-style {
+  font-family: 'chonburi';
 }
 #footer-top {
   display: none !important;

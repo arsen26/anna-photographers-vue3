@@ -1,7 +1,7 @@
 <template>
   <v-row class="justify-center container-style">
     <!-- KJO DO JET KOLONA PER LOGON DHE PER LOCATION-->
-    <v-col cols="12" md="4" class="text-center">
+    <v-col cols="12" md="4" lg="3" class="text-center">
       <v-img :width="300" aspect-ratio="16/9" :src="annaLogo" class="mb-4"></v-img>
       <h5 class="v-card-subtitle" @click="sendToLocation">
         Address: Misto Mame, Rruga Thoma Koxhaj, Kashar 1001
@@ -10,7 +10,7 @@
     <v-divider vertical class="hidden-sm-and-down"></v-divider>
 
     <!-- KJO DO JET KOLONA PER MENYRAT E KONTAKTIT KREUN DEKORE FOTOGRAFI-->
-    <v-col cols="12" md="4" class="text-center list-container">
+    <v-col cols="12" md="4" lg="3" class="text-center list-container">
       <v-row class="justify-center">
         <h3>Na kontaktoni ne:</h3>
         <v-divider></v-divider>
@@ -37,7 +37,7 @@
     <v-divider vertical class="hidden-sm-and-down"></v-divider>
 
     <!-- KJO DO JET KOLONA E FUNDIT QE SE DI SE PER CA DO JET PO DO E SHOFIM-->
-    <v-col cols="12" md="4" class="text-center list-container">
+    <v-col cols="12" md="4" lg="3" class="text-center list-container">
       <v-row class="justify-center">
         <h3>Na gjeni ne:</h3>
         <v-divider></v-divider>

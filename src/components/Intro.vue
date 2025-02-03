@@ -2,8 +2,8 @@
   <section id="intro" class="py-16">
     <v-container>
       <v-responsive class="max-auto mx-auto text-center" max-width="600">
-        <v-avatar color="#ef476f" size="70" class="mb-8">
-          <v-icon x-large dark>mdi-camera</v-icon>
+        <v-avatar color="#192744" size="70" class="mb-8">
+          <v-icon color="#ffcc00" x-large dark>mdi-camera</v-icon>
         </v-avatar>
 
         <h2 class="text-h4 text-md-h3 text-center font-weight-black mb-7 title-style">
@@ -33,7 +33,7 @@
               </div>
             </v-col>
             <v-col v-if="card.callout" cols="2">
-              <span class="text-h3 font-weight-bold" style="opacity: 0.2; color: #ef476f">{{
+              <span class="text-h3 font-weight-bold" style="opacity: 0.2; color: #192744">{{
                 card.callout
               }}</span>
             </v-col>
@@ -75,11 +75,11 @@ export default {
 
 <style scoped>
 .subtitle-style {
-  color: #ef476f;
+  color: black;
 }
 .title-style {
   font-family: 'chonburi';
-  color: #ef476f;
+  color: black;
   letter-spacing: 0.2rem !important;
 }
 </style>

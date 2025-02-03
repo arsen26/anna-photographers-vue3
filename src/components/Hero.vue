@@ -29,10 +29,10 @@
             <p class="mb-5 white--text">{{ carousel.subHeading }}</p>
             <v-btn
               @click="sendToPhoneNumber"
-              style="background-color: #ef476f; color: white"
+              style="background-color: #192744; color: #ffcc00"
               class="my-3"
             >
-              <v-icon left large color="white">mdi-phone</v-icon>
+              <v-icon left large color="#ffcc00">mdi-phone</v-icon>
               Rezervoni tani
             </v-btn>
             <span class="mx-2 my-4"></span>

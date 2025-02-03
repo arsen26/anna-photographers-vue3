@@ -7,7 +7,7 @@
             <v-col cols="12" sm="7" class="text-center">
               <h2 class="follow-us-on-social-title">Na ndiqni ne rrjetet sociale</h2>
 
-              <p style="color: #ef476f; font-family: 'chonburi'">
+              <p style="color: #192744; font-family: 'chonburi'">
                 Ndiqeni live punen tone, ne rrjetet tona sociale per te marre perditesimet me te
                 fundit rreth nesh.
               </p>
@@ -20,11 +20,11 @@
                   class="d-flex"
                   icon
                   large
-                  :color="'#ef476f'"
+                  :color="'#192744'"
                   :href="socialm.link"
                   target="_blank"
                 >
-                  <v-icon>{{ socialm.icon }}</v-icon>
+                  <v-icon color="#ffcc00">{{ socialm.icon }}</v-icon>
                 </v-btn>
               </div>
             </v-col>
@@ -82,6 +82,6 @@ const computedClass = computed(() =>
 .follow-us-on-social-title {
   font-size: 45px;
   font-family: 'chonburi';
-  color: #ef476f;
+  color: black;
 }
 </style>

@@ -2,7 +2,7 @@
   <v-row class="justify-center container-style">
     <!-- KJO DO JET KOLONA PER LOGON DHE PER LOCATION-->
     <v-col cols="12" md="4" lg="3" class="text-center">
-      <v-img :width="300" aspect-ratio="16/9" :src="annaLogo" class="mb-4"></v-img>
+      <v-img :width="200" aspect-ratio="16/9" :src="annaLogo" class="mb-4"></v-img>
       <h5 class="v-card-subtitle" @click="sendToLocation">
         Address: Misto Mame, Rruga Thoma Koxhaj, Kashar 1001
       </h5>

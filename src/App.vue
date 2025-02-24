@@ -15,7 +15,7 @@ import { useRouter } from 'vue-router'
 import siteFooter from './components/siteFooter.vue'
 import whatssAppContact from './components/whatssAppContact.vue'
 import siteHeader from './components/siteHeader.vue'
-import Background from './assets/sprinkle.svg'
+import Background from './assets/Sprinkle.svg'
 
 const router = useRouter()
 const BackgroundImg = ref(Background)

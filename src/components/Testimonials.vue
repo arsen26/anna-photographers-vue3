@@ -13,33 +13,7 @@
 </template>
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-const testimonials = ref([
-  {
-    avtar: 'person-4.jpg',
-    name: 'Mario Speedwagon',
-    post: 'Creative Editor of ABC LTD',
-  },
-  {
-    avtar: 'person-8.jpg',
-    name: 'Petey Cruiser',
-    post: 'CEO of Json LLC',
-  },
-  {
-    avtar: 'person-7.jpg',
-    name: 'Anna Sthesia',
-    post: 'Director of Cleaner LTD',
-  },
-  {
-    avtar: 'person-10.jpg',
-    name: 'Paul Molive',
-    post: 'Manager of Torson LTD',
-  },
-  {
-    avtar: 'person-9.jpg',
-    name: 'Gail Forcewind',
-    post: 'Human Resource Manager of Humibed LLC',
-  },
-])
+
 </script>
 
 <style scoped>

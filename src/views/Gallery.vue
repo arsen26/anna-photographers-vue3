@@ -10,8 +10,9 @@
                 :src="n.path"
                 :lazy-src="n.path"
                 aspect-ratio="1"
-                class="grey lighten-2 rounded-lg"
+                class="grey lighten-2 rounded-lg img-style"
                 contain
+                @click="showFullImg(n)"
               >
                 <template v-slot:placeholder>
                   <v-row class="fill-height ma-0" align="center" justify="center">
@@ -21,9 +22,30 @@
               </v-img>
             </v-col>
           </v-row>
+
         </v-container>
       </v-col>
     </v-row>
+
+    <!-- Dialog Box që do të shfaqë foton -->
+    <v-dialog v-model="dialog"
+    max-width="900"
+    max-height="800"
+    persistent
+    @click:outside="dialog = false">
+  <v-card class="d-flex" style="height: 100%;">
+
+      <v-img :src="selectedImage"  :lazy-src="selectedImage" class="rounded-lg dialog-img-style" style="object-fit: contain; height: 100%; width: 100%;"></v-img>
+
+
+
+  </v-card>
+</v-dialog>
+
+
+
+
+
   </section>
 </template>
 
@@ -96,13 +118,14 @@ import anna64 from '@/assets/galleryAsset/annaphotographers (64).jpg'
 import anna65 from '@/assets/galleryAsset/annaphotographers (65).jpg'
 import anna66 from '@/assets/galleryAsset/annaphotographers (66).jpg'
 
+const dialog = ref(false)
 const heroAlt = ref([
   {
     src: 'pexels-andrea-piacquadio-3830745.jpg',
     heading: 'Galeria e fotove',
   },
 ])
-
+const selectedImage = ref(null)
 const photoArr = ref([
   { path: anna5 },
   { path: anna12 },
@@ -171,4 +194,15 @@ const photoArr = ref([
 
   { path: anna65 },
 ])
+const showFullImg = (item) => {
+  selectedImage.value = item.path;
+      dialog.value = true;
+}
 </script>
+
+<style scoped>
+  .img-style{
+    cursor: pointer;
+  }
+
+</style>

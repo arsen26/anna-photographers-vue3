@@ -7,6 +7,7 @@
         height="30vh"
         width="100%"
         :src="item.src"
+        :lazy-src="item.src"
         :aspect-ratio="1"
         cover
         class="gradient-fill v-img"

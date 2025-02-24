@@ -180,8 +180,8 @@ h3 {
   color: white;
 }
 .bottom-footer-style {
-  background-color: #10192b;
-  color: white;
+  background-color: #030f0f;
+  color: #00df82;
   height: 25px;
 }
 </style>

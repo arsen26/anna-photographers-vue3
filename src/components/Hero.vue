@@ -18,7 +18,7 @@
         class="gradient-fill"
         width="100%"
       >
-        <div class="carousel-background" :style="{ backgroundImage: `url(${carousel.src})` }"></div>
+        <div :style="{ backgroundImage: `url(${carousel.src})` }"></div>
         <v-container fluid>
           <div class="carousel-image" style="max-width: 600px; z-index: 2">
             <div

@@ -33,7 +33,7 @@
               </div>
             </v-col>
             <v-col v-if="card.callout" cols="2">
-              <span class="text-h3 font-weight-bold" style="opacity: 0.2; color: #00df82">{{
+              <span class="text-h3 font-weight-bold" style="opacity: 0.5; color: #00df82">{{
                 card.callout
               }}</span>
             </v-col>

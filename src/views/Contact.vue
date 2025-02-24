@@ -32,8 +32,8 @@
                         </v-icon> </v-list-item-icon
                       >EMAIL</v-list-item-title
                     >
-                    <v-list-item-subtitle>anxhir@gmail.com</v-list-item-subtitle>
-                    <v-list-item-subtitle>annaphotographers@yahoo.com</v-list-item-subtitle>
+                    <v-list-item-subtitle>Annaphotographers@yahoo.com</v-list-item-subtitle>
+                    <!-- <v-list-item-subtitle>annaphotographers@yahoo.com</v-list-item-subtitle> -->
                   </v-list-item-content>
                 </v-list-item>
 

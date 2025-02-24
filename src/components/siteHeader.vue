@@ -22,7 +22,7 @@
   <v-navigation-drawer v-model="drawer" location="right" temporary>
     <v-list lines="one">
       <template v-for="(item, i) in items" :key="i">
-        <v-list-item :prepend-icon="item.icon" :to="item.to">
+        <v-list-item color="#03624c" :prepend-icon="item.icon" :to="item.to">
           <v-list-item-title class="text-uppercase menu-text-mobile">{{
             item.title
           }}</v-list-item-title>

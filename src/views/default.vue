@@ -11,9 +11,9 @@
 </template>
 
 <script>
-import siteHeader from '~/components/siteHeader.vue'
-import footerTop from '~/components/footerTop.vue'
-import siteFooter from '~/components/siteFooter.vue'
+import siteHeader from '@/components/siteHeader.vue'
+import footerTop from '@/components/footerTop.vue'
+import siteFooter from '@/components/siteFooter.vue'
 export default {
   components: {
     siteHeader,

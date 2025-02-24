@@ -66,6 +66,6 @@ export default {
 <style scoped>
 .title-style {
   font-family: 'chonburi';
-  color: #192744;
+  color: #03624c;
 }
 </style>

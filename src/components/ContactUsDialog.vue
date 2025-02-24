@@ -20,7 +20,7 @@
     <v-row class="row-container-for-information">
       <v-col>
         <v-text-field
-          color="#192744"
+          color="#03624c"
           v-model="nameValue"
           label="Emer"
           variant="outlined"
@@ -28,7 +28,7 @@
       </v-col>
       <v-col>
         <v-text-field
-          color="#192744"
+          color="#03624c"
           v-model="surnameValue"
           label="Mbiemer"
           variant="outlined"
@@ -39,7 +39,7 @@
     <v-row class="row-container-for-information">
       <v-col>
         <v-text-field
-          color="#192744"
+          color="#03624c"
           hide-spin-buttons="true"
           type="number"
           v-model="numberValue"
@@ -55,7 +55,7 @@
             variant="outlined"
           ></v-text-field> -->
         <v-text-field
-          color="#192744"
+          color="#03624c"
           v-model="packageValueModel"
           :label="packageValue ? '' : packageLabel"
           variant="outlined"
@@ -64,7 +64,7 @@
     </v-row>
 
     <v-row class="row-container-for-information-text-area">
-      <v-textarea color="#192744" v-model="moreMessage" label="Me teper..." variant="outlined"
+      <v-textarea color="#03624c" v-model="moreMessage" label="Me teper..." variant="outlined"
         >{{ packageType }}
       </v-textarea>
     </v-row>
@@ -73,7 +73,7 @@
       <v-date-picker
         @update:model-value="formatDate"
         v-model="dateToSend"
-        color="#192744"
+        color="#03624c"
         :title="''"
       ></v-date-picker>
     </v-row>
@@ -84,7 +84,7 @@
       <v-btn
         prepend-icon="mdi-check-circle"
         variant="outlined"
-        color="#192744"
+        color="#03624c"
         @click="sendMessageToWhatssApp"
         >Rezervoni</v-btn
       >

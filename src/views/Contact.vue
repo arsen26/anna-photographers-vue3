@@ -12,7 +12,7 @@
                   <v-list-item-content>
                     <v-list-item-title>
                       <v-list-item-icon>
-                        <v-icon class="icon-contact-style" color="#192744">
+                        <v-icon class="icon-contact-style" color="#03624c">
                           mdi-map-marker
                         </v-icon> </v-list-item-icon
                       >ADRESA</v-list-item-title
@@ -27,7 +27,7 @@
                   <v-list-item-content>
                     <v-list-item-title>
                       <v-list-item-icon>
-                        <v-icon class="icon-contact-style" color="#192744">
+                        <v-icon class="icon-contact-style" color="#03624c">
                           mdi-email
                         </v-icon> </v-list-item-icon
                       >EMAIL</v-list-item-title
@@ -41,7 +41,7 @@
                   <v-list-item-content>
                     <v-list-item-title>
                       <v-list-item-icon>
-                        <v-icon class="icon-contact-style" color="#192744">
+                        <v-icon class="icon-contact-style" color="#03624c">
                           mdi-phone
                         </v-icon> </v-list-item-icon
                       >PHONE</v-list-item-title
@@ -56,7 +56,7 @@
                   <v-list-item-icon> </v-list-item-icon>
                   <v-list-item-content>
                     <v-list-item-title class="title-icon-style">
-                      <v-icon class="icon-contact-style" color="#192744"> mdi-clock </v-icon>MONDAY
+                      <v-icon class="icon-contact-style" color="#03624c"> mdi-clock </v-icon>MONDAY
                       to FRIDAY
                     </v-list-item-title>
                     <v-list-item-subtitle>9am to 7pm</v-list-item-subtitle>

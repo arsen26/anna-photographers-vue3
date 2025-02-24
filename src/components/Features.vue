@@ -14,7 +14,7 @@
           <v-avatar
             size="80"
             class="display-1 white font-weight-bold number-style mb-5"
-            style="opacity: 1.15; background-color: white; font-size: xx-large;color: #192744;"
+            style="opacity: 1.15; background-color: #030f0f; font-size: xx-large;color: #00df82;"
           >
             {{ card.callout }}
           </v-avatar>
@@ -98,9 +98,9 @@ const cards = ref([
   font-size: large;
 }
 .number-style {
-  color: #ef476f;
+  color: #030f0f;
 }
 .section-container-style {
-  background-color: #192744;
+  background-color: #03624c;
 }
 </style>

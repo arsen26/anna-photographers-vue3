@@ -67,12 +67,12 @@ const sendToEmail = (person) => {
 
 <style scoped>
 .person-name-style {
-  color: #192744;
+  color: #03624c;
 }
 .title-style {
   font-family: 'chonburi';
   letter-spacing: 0.2rem !important;
-  color: #ef476f;
+  color: #030f0f;
 }
 .email-at-teammember {
   cursor: pointer;

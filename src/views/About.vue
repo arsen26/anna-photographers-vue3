@@ -138,6 +138,6 @@ const head = () => {
 .title-style {
   font-family: 'chonburi';
   letter-spacing: 0.2rem !important;
-  color: #ef476f;
+  color: #030f0f;
 }
 </style>

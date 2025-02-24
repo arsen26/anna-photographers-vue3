@@ -69,7 +69,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import annaLogo from '@/assets/annalogo.png'
+import annaLogo from '@/assets/logoinverted.png'
 const sendToWhatssApp = () => {
   const url = navigator.userAgent.match(
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i,
@@ -162,7 +162,7 @@ const sendToLinkedin = () => {
 }
 .container-style {
   color: white;
-  background-color: #192744;
+  background-color: #03624c;
 }
 .v-list-style {
   background-color: transparent;
@@ -177,7 +177,7 @@ const sendToLinkedin = () => {
 }
 h3 {
   font-size: 1.5em;
-  color: #ffcc00;
+  color: white;
 }
 .bottom-footer-style {
   background-color: #10192b;

@@ -13,7 +13,7 @@
       rows="8"
       row-height="20"
     ></v-textarea>
-    <v-btn outlined block color="#192744" @click="sendEmail">SEND EMAIL</v-btn>
+    <v-btn outlined block color="#03624c" @click="sendEmail">SEND EMAIL</v-btn>
   </v-form>
 </template>
 

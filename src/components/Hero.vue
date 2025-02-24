@@ -29,15 +29,15 @@
             <p class="mb-5 white--text">{{ carousel.subHeading }}</p>
             <v-btn
               @click="sendToPhoneNumber"
-              style="background-color: #192744; color: #ffcc00"
+              style="background-color: #00df82; color: #030f0f"
               class="my-3"
             >
-              <v-icon left large color="#ffcc00">mdi-phone</v-icon>
+              <v-icon left large color="#030f0f">mdi-phone</v-icon>
               Rezervoni tani
             </v-btn>
             <span class="mx-2 my-4"></span>
-            <v-btn @click="sendToInstagram" text class="my-3" color="#fffff" variant="outlined">
-              <v-icon left large color="#fffff">mdi-instagram</v-icon>
+            <v-btn @click="sendToInstagram" text class="my-3" color="#00df82" variant="outlined">
+              <v-icon left large color="#00df82">mdi-instagram</v-icon>
               Instagram
             </v-btn>
           </div>
@@ -116,7 +116,7 @@ const sendToInstagram = () => {
   margin-top: 5px;
 }
 .gradient-fill {
-  background: linear-gradient(to right, rgba(3, 12, 41, 0.75), rgba(5, 11, 31, 0.65));
+  background: linear-gradient(to right, rgba(3, 98, 76, 0.75), rgba(3, 98, 76, 0.65));
   position: relative;
   overflow: hidden;
 }

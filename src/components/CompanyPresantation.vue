@@ -8,16 +8,14 @@ export default {
       teDhenat: [
         {
           title: 'ANNA PHOTOGRAPHERS',
-          description:
-            'Ne jemi destinacioni juaj i duhur për sesione fotografike magjike. ',
+          description: 'Ne jemi destinacioni juaj i duhur për sesione fotografike magjike. ',
           elevation: 16,
           button: 'me kliko per me teper informacjone',
           src: 'photographyVideo.mp4',
         },
         {
           title: 'ANNA DECOR',
-          description:
-            'Perjeto magjine e shnderrimit te imagjinates ne realitet',
+          description: 'Perjeto magjine e shnderrimit te imagjinates ne realitet',
           elevation: 16,
           button: 'me kliko per me teper informacjone',
           src: 'decorVideo.mp4',

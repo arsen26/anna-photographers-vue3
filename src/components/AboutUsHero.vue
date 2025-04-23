@@ -49,10 +49,10 @@ const heroAlt = ref(props.heroAlt)
 }
 .text-style {
   color: white;
-  font-family: "Jaro";
+  font-family: 'Jaro';
   /* font-optical-sizing: auto; */
   font-weight: 300;
-  letter-spacing: .5rem !important;
+  letter-spacing: 0.5rem !important;
   /* font-style: normal; */
 }
 .text-container {

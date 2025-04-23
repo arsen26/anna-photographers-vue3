@@ -1,10 +1,8 @@
 // src/plugins/vuetify.js
-import 'vuetify/styles'; // Importo stilet e Vuetify
-import { createVuetify } from 'vuetify';
-import { aliases, mdi } from 'vuetify/iconsets/mdi'; // Për ikona Material Design
-import { en } from 'vuetify/locale';
-
-
+import 'vuetify/styles' // Importo stilet e Vuetify
+import { createVuetify } from 'vuetify'
+import { aliases, mdi } from 'vuetify/iconsets/mdi' // Për ikona Material Design
+import { en } from 'vuetify/locale'
 
 export const vuetify = createVuetify({
   icons: {
@@ -18,7 +16,7 @@ export const vuetify = createVuetify({
     defaultLocale: 'en',
     messages: { en }, // Mund të shtosh gjuhë të tjera këtu
   },
-    theme: {
+  theme: {
     defaultTheme: 'light',
     colors: {
       cyan: '#00BCD4',
@@ -28,5 +26,4 @@ export const vuetify = createVuetify({
       orange: '#FF9800',
     },
   },
-});
-
+})

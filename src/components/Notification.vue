@@ -8,17 +8,8 @@
     {{ text }}
 
     <template v-slot:action="{ attrs }">
-      <v-btn color="info" small v-bind="attrs" @click="snackbar = false">
-        More info
-      </v-btn>
-      <v-btn
-        color="primary ml-3"
-        small
-        v-bind="attrs"
-        @click="snackbar = false"
-      >
-        Accept
-      </v-btn>
+      <v-btn color="info" small v-bind="attrs" @click="snackbar = false"> More info </v-btn>
+      <v-btn color="primary ml-3" small v-bind="attrs" @click="snackbar = false"> Accept </v-btn>
     </template>
   </v-snackbar>
 </template>

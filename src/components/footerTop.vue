@@ -16,10 +16,9 @@
             </v-col>
             <v-col cols="12">
               <p class="mt-8 text-justify" style="max-width: 400px">
-                Për çdo pyetje që mund të keni rreth nesh, paketave tona të
-                seteve fotografike, ofertave për dekorimin e festave tuaja, apo
-                çdo shërbim tjetër që ofrojmë, ju lutemi na kontaktoni. Jemi
-                këtu për t'ju ndihmuar me çdo informacion dhe për të bërë
+                Për çdo pyetje që mund të keni rreth nesh, paketave tona të seteve fotografike,
+                ofertave për dekorimin e festave tuaja, apo çdo shërbim tjetër që ofrojmë, ju lutemi
+                na kontaktoni. Jemi këtu për t'ju ndihmuar me çdo informacion dhe për të bërë
                 përvojën tuaj sa më të këndshme!
               </p>
             </v-col>
@@ -32,11 +31,8 @@
 
                   <v-list-item-content>
                     <v-list-item-title>ADDRESS</v-list-item-title>
-                    <v-list-item-subtitle
-                      class="redirect-style"
-                      @click="redirectToAdress"
-                      >Rruga Thoma Koxhaj, Pallatet Cabej, tek kmy-ja e
-                      vogel.</v-list-item-subtitle
+                    <v-list-item-subtitle class="redirect-style" @click="redirectToAdress"
+                      >Rruga Thoma Koxhaj, Pallatet Cabej, tek kmy-ja e vogel.</v-list-item-subtitle
                     >
                   </v-list-item-content>
                 </v-list-item>
@@ -48,14 +44,10 @@
 
                   <v-list-item-content>
                     <v-list-item-title>EMAIL</v-list-item-title>
-                    <v-list-item-subtitle
-                      class="redirect-style"
-                      @click="redirectToAnxhela"
+                    <v-list-item-subtitle class="redirect-style" @click="redirectToAnxhela"
                       >anxhir.as@gmail.com</v-list-item-subtitle
                     >
-                    <v-list-item-subtitle
-                      class="redirect-style"
-                      @click="redirectToFlajdon"
+                    <v-list-item-subtitle class="redirect-style" @click="redirectToFlajdon"
                       >flajdon@gmail.com</v-list-item-subtitle
                     >
                   </v-list-item-content>
@@ -70,9 +62,7 @@
 
                   <v-list-item-content>
                     <v-list-item-title>PHONE</v-list-item-title>
-                    <v-list-item-subtitle
-                      class="redirect-style"
-                      @click="redirectToPhone"
+                    <v-list-item-subtitle class="redirect-style" @click="redirectToPhone"
                       >(+355) 069 749 6384</v-list-item-subtitle
                     >
                     <!-- <v-list-item-subtitle>(650) 555-1234</v-list-item-subtitle> -->
@@ -118,8 +108,8 @@
 
 <script>
 import footerContactForm from '@/components/footerContactForm.vue'
-import annaLogo from '@/assets/annalogo.png';
-import tiktokIcon from '@/assets/tiktokL.svg';
+import annaLogo from '@/assets/annalogo.png'
+import tiktokIcon from '@/assets/tiktokL.svg'
 export default {
   components: {
     footerContactForm,
@@ -178,9 +168,8 @@ export default {
 }
 </script>
 <style scoped>
-.title-style{
-  font-family: "chonburi";
-
+.title-style {
+  font-family: 'chonburi';
 }
 .redirect-style:hover {
   color: rgb(70, 70, 255) !important;
@@ -203,5 +192,4 @@ export default {
   width: 27px;
   height: 27px;
 }
-
 </style>

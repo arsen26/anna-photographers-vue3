@@ -13,7 +13,6 @@
 </template>
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-
 </script>
 
 <style scoped>

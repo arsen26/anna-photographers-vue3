@@ -14,7 +14,7 @@
           <v-avatar
             size="80"
             class="display-1 white font-weight-bold number-style mb-5"
-            style="opacity: 1.15; background-color: #030f0f; font-size: xx-large;color: #00df82;"
+            style="opacity: 1.15; background-color: #030f0f; font-size: xx-large; color: #00df82"
           >
             {{ card.callout }}
           </v-avatar>

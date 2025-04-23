@@ -22,30 +22,27 @@
               </v-img>
             </v-col>
           </v-row>
-
         </v-container>
       </v-col>
     </v-row>
 
     <!-- Dialog Box që do të shfaqë foton -->
-    <v-dialog v-model="dialog"
-    max-width="900"
-    max-height="800"
-    persistent
-    @click:outside="dialog = false">
-  <v-card class="d-flex" style="height: 100%;">
-
-      <v-img :src="selectedImage"  :lazy-src="selectedImage" class="rounded-lg dialog-img-style" style="object-fit: contain; height: 100%; width: 100%;"></v-img>
-
-
-
-  </v-card>
-</v-dialog>
-
-
-
-
-
+    <v-dialog
+      v-model="dialog"
+      max-width="900"
+      max-height="800"
+      persistent
+      @click:outside="dialog = false"
+    >
+      <v-card class="d-flex" style="height: 100%">
+        <v-img
+          :src="selectedImage"
+          :lazy-src="selectedImage"
+          class="rounded-lg dialog-img-style"
+          style="object-fit: contain; height: 100%; width: 100%"
+        ></v-img>
+      </v-card>
+    </v-dialog>
   </section>
 </template>
 
@@ -195,14 +192,13 @@ const photoArr = ref([
   { path: anna65 },
 ])
 const showFullImg = (item) => {
-  selectedImage.value = item.path;
-      dialog.value = true;
+  selectedImage.value = item.path
+  dialog.value = true
 }
 </script>
 
 <style scoped>
-  .img-style{
-    cursor: pointer;
-  }
-
+.img-style {
+  cursor: pointer;
+}
 </style>

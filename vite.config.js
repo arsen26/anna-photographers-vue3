@@ -5,6 +5,8 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import path from 'path'
 
 export default defineConfig({
+  assetsInclude: ['**/*.heic'],
+
   plugins: [vue(), vueDevTools()],
   resolve: {
     alias: {

@@ -45,7 +45,7 @@ const items = ref([
   { icon: 'mdi-information-outline', title: 'Rreth nesh', to: '/About' },
   { icon: 'mdi-view-gallery-outline', title: 'Photo Gallery', to: '/gallery' },
   { icon: 'mdi-finance', title: 'Cmimet', to: '/pricing' },
-  { icon: ' mdi-view-gallery', title: 'Decor Gallery', to: '/gallery' },
+  { icon: ' mdi-view-gallery', title: 'Decor Gallery', to: '/decorGallery' },
   { icon: 'mdi-contacts', title: 'Contact', to: '/Contact' },
 ])
 const changeDrawerValue = () => {

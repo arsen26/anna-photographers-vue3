@@ -112,13 +112,13 @@ const findUsMenu = ref([
     title: 'Instagram',
     action: 'send_to_wa',
     icon: 'mdi-instagram',
-    functionToCall: sendToWhatssApp,
+    functionToCall: sendToInstagram,
   },
   {
     title: 'Facebook',
     action: 'send_to_tel',
     icon: 'mdi-facebook',
-    functionToCall: sendToTel,
+    functionToCall: sendToFacebook,
   },
   {
     title: 'Tiktok',
@@ -130,19 +130,35 @@ const findUsMenu = ref([
     title: 'Youtube',
     action: 'send_to_email',
     icon: 'mdi-youtube',
-    functionToCall: sendToEmail,
+    functionToCall: sendToYoutube,
   },
   {
     title: 'Pinterest',
     action: 'send_to_email',
     icon: 'mdi-pinterest',
-    functionToCall: sendToEmail,
+    functionToCall: sendToPinterest,
   },
 ])
 const sendToLocation = () => {
   const url =
     'https://www.google.com/maps/dir//Misto+Mame,+Rruga+Thoma+Koxhaj,+Kashar+1001/@41.3195911,19.7522832,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x135031a222e48ff1:0x1d747a32a885ed0f!2m2!1d19.7723709!2d41.3199428?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D'
 
+  window.open(url, '_blank')
+}
+const sendToYoutube = () => {
+  const url = 'https://www.youtube.com/@annaphotographers/featured'
+  window.open(url, '_blank')
+}
+const sendToFacebook = () => {
+  const url = 'https://www.facebook.com/annaphotographerss/'
+  window.open(url, '_blank')
+}
+const sendToInstagram = () => {
+  const url = 'https://www.instagram.com/annaphotographers/'
+  window.open(url, '_blank')
+}
+const sendToPinterest = () => {
+  const url = 'https://www.pinterest.com/Annaphotographerss/'
   window.open(url, '_blank')
 }
 const sendToLinkedin = () => {

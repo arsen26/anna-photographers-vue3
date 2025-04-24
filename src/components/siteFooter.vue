@@ -86,6 +86,22 @@ const sendToTel = () => {
 const sendToEmail = () => {
   window.open(`mailto:anxhir.as@gmail.com`)
 }
+const sendToYoutube = () => {
+  const url = 'https://www.youtube.com/@annaphotographers/featured'
+  window.open(url, '_blank')
+}
+const sendToFacebook = () => {
+  const url = 'https://www.facebook.com/annaphotographerss/'
+  window.open(url, '_blank')
+}
+const sendToInstagram = () => {
+  const url = 'https://www.instagram.com/annaphotographers/'
+  window.open(url, '_blank')
+}
+const sendToPinterest = () => {
+  const url = 'https://www.pinterest.com/Annaphotographerss/'
+  window.open(url, '_blank')
+}
 const year = ref(new Date().getFullYear())
 const menu = ref([
   {
@@ -145,22 +161,6 @@ const sendToLocation = () => {
 
   window.open(url, '_blank')
 }
-const sendToYoutube = () => {
-  const url = 'https://www.youtube.com/@annaphotographers/featured'
-  window.open(url, '_blank')
-}
-const sendToFacebook = () => {
-  const url = 'https://www.facebook.com/annaphotographerss/'
-  window.open(url, '_blank')
-}
-const sendToInstagram = () => {
-  const url = 'https://www.instagram.com/annaphotographers/'
-  window.open(url, '_blank')
-}
-const sendToPinterest = () => {
-  const url = 'https://www.pinterest.com/Annaphotographerss/'
-  window.open(url, '_blank')
-}
 const sendToLinkedin = () => {
   const url = 'https://www.linkedin.com/in/arsen-cenollari-88a486284/?originalSubdomain=al'
   window.open(url, '_blank')
@@ -190,7 +190,11 @@ const sendToLinkedin = () => {
 }
 .v-card-subtitle {
   cursor: pointer;
+  word-break: break-word;
+  white-space: normal;
+  text-align: center;
 }
+
 h3 {
   font-size: 1.5em;
   color: white;

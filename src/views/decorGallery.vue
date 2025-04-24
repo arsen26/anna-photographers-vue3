@@ -57,7 +57,6 @@ import annaDekor4 from '@/assets/decorGalleryAsset/annaDekor (2).heic'
 import annaDekor5 from '@/assets/decorGalleryAsset/annaDekor (2).jpg'
 import annaDekor6 from '@/assets/decorGalleryAsset/annaDekor (2).webp'
 
-import annaDekor7 from '@/assets/decorGalleryAsset/annaDekor (3).heic'
 import annaDekor8 from '@/assets/decorGalleryAsset/annaDekor (3).jpg'
 import annaDekor9 from '@/assets/decorGalleryAsset/annaDekor (3).webp'
 
@@ -129,7 +128,6 @@ import annaDekor58 from '@/assets/decorGalleryAsset/annaDekor (20).heic'
 import annaDekor59 from '@/assets/decorGalleryAsset/annaDekor (20).jpg'
 import annaDekor60 from '@/assets/decorGalleryAsset/annaDekor (20).webp'
 
-import annaDekor61 from '@/assets/decorGalleryAsset/annaDekor (21).heic'
 import annaDekor62 from '@/assets/decorGalleryAsset/annaDekor (21).webp'
 import annaDekor63 from '@/assets/decorGalleryAsset/annaDekor (22).webp'
 
@@ -162,7 +160,6 @@ const photoArr = ref([
   { path: annaDekor4, alt: 'anna dekor festa' },
   { path: annaDekor5, alt: 'anna dekor festa' },
   { path: annaDekor6, alt: 'anna dekor festa' },
-  { path: annaDekor7, alt: 'anna dekor festa' },
   { path: annaDekor8, alt: 'anna dekor festa' },
   { path: annaDekor9, alt: 'anna dekor festa' },
   { path: annaDekor10, alt: 'anna dekor festa' },
@@ -216,7 +213,6 @@ const photoArr = ref([
   { path: annaDekor58, alt: 'anna dekor festa' },
   { path: annaDekor59, alt: 'anna dekor festa' },
   { path: annaDekor60, alt: 'anna dekor festa' },
-  { path: annaDekor61, alt: 'anna dekor festa' },
   { path: annaDekor62, alt: 'anna dekor festa' },
   { path: annaDekor63, alt: 'anna dekor festa' },
   { path: annaDekor64, alt: 'anna dekor festa' },
